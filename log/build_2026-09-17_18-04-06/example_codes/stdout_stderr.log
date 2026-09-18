@@ -1,0 +1,21 @@
+running develop
+running egg_info
+creating example_codes.egg-info
+writing example_codes.egg-info/PKG-INFO
+writing dependency_links to example_codes.egg-info/dependency_links.txt
+writing entry points to example_codes.egg-info/entry_points.txt
+writing requirements to example_codes.egg-info/requires.txt
+writing top-level names to example_codes.egg-info/top_level.txt
+writing manifest file 'example_codes.egg-info/SOURCES.txt'
+reading manifest file 'example_codes.egg-info/SOURCES.txt'
+writing manifest file 'example_codes.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example-codes.egg-link (link to .)
+
+Installed /home/ben/KV6022_limo_ros2/build/example_codes
+running symlink_data
+creating /home/ben/KV6022_limo_ros2/install/example_codes/share/ament_index
+creating /home/ben/KV6022_limo_ros2/install/example_codes/share/ament_index/resource_index
+creating /home/ben/KV6022_limo_ros2/install/example_codes/share/ament_index/resource_index/packages
+symbolically linking /home/ben/KV6022_limo_ros2/build/example_codes/resource/example_codes -> /home/ben/KV6022_limo_ros2/install/example_codes/share/ament_index/resource_index/packages
+symbolically linking /home/ben/KV6022_limo_ros2/build/example_codes/package.xml -> /home/ben/KV6022_limo_ros2/install/example_codes/share/example_codes

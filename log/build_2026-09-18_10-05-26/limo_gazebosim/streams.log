@@ -1,0 +1,116 @@
+[0.110s] Invoking command in '/home/ben/KV6022_limo_ros2/build/limo_gazebosim': AMENT_PREFIX_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs:/home/ben/KV6022_limo_ros2/install/limo_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs:/home/ben/KV6022_limo_ros2/install/limo_description:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ros2) LD_LIBRARY_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ben/KV6022_limo_ros2/install/limo_msgs/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake /home/ben/KV6022_limo_ros2/src/limo_gazebosim -DCMAKE_INSTALL_PREFIX=/home/ben/KV6022_limo_ros2/install/limo_gazebosim
+[0.151s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.374s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.402s] -- Found rclcpp: 16.0.21 (/opt/ros/humble/share/rclcpp/cmake)
+[0.474s] -- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.481s] -- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.494s] -- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.515s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.541s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.651s] -- Found rmw_implementation_cmake: 6.1.4 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.660s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.934s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.062s] -- Found rclpy: 3.3.22 (/opt/ros/humble/share/rclpy/cmake)
+[1.064s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.299s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.310s] -- Added test 'lint_cmake' to check CMake code style
+[1.316s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.365s] -- Added test 'xmllint' to check XML markup files
+[1.370s] -- Configuring done
+[1.407s] -- Generating done
+[1.414s] -- Build files have been written to: /home/ben/KV6022_limo_ros2/build/limo_gazebosim
+[1.437s] Invoked command in '/home/ben/KV6022_limo_ros2/build/limo_gazebosim' returned '0': AMENT_PREFIX_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs:/home/ben/KV6022_limo_ros2/install/limo_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs:/home/ben/KV6022_limo_ros2/install/limo_description:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ros2) LD_LIBRARY_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ben/KV6022_limo_ros2/install/limo_msgs/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake /home/ben/KV6022_limo_ros2/src/limo_gazebosim -DCMAKE_INSTALL_PREFIX=/home/ben/KV6022_limo_ros2/install/limo_gazebosim
+[1.441s] Invoking command in '/home/ben/KV6022_limo_ros2/build/limo_gazebosim': AMENT_PREFIX_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs:/home/ben/KV6022_limo_ros2/install/limo_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs:/home/ben/KV6022_limo_ros2/install/limo_description:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ros2) LD_LIBRARY_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ben/KV6022_limo_ros2/install/limo_msgs/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/ben/KV6022_limo_ros2/build/limo_gazebosim -- -j8 -l8
+[1.672s] Built target ament_cmake_python_symlink_limo_gazebosim
+[2.035s] running egg_info
+[2.058s] writing limo_gazebosim.egg-info/PKG-INFO
+[2.059s] writing dependency_links to limo_gazebosim.egg-info/dependency_links.txt
+[2.059s] writing top-level names to limo_gazebosim.egg-info/top_level.txt
+[2.126s] reading manifest file 'limo_gazebosim.egg-info/SOURCES.txt'
+[2.127s] writing manifest file 'limo_gazebosim.egg-info/SOURCES.txt'
+[2.182s] Built target ament_cmake_python_build_limo_gazebosim_egg
+[2.219s] Invoked command in '/home/ben/KV6022_limo_ros2/build/limo_gazebosim' returned '0': AMENT_PREFIX_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs:/home/ben/KV6022_limo_ros2/install/limo_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs:/home/ben/KV6022_limo_ros2/install/limo_description:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ros2) LD_LIBRARY_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ben/KV6022_limo_ros2/install/limo_msgs/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/ben/KV6022_limo_ros2/build/limo_gazebosim -- -j8 -l8
+[2.224s] Invoking command in '/home/ben/KV6022_limo_ros2/build/limo_gazebosim': AMENT_PREFIX_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs:/home/ben/KV6022_limo_ros2/install/limo_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs:/home/ben/KV6022_limo_ros2/install/limo_description:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ros2) LD_LIBRARY_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ben/KV6022_limo_ros2/install/limo_msgs/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/ben/KV6022_limo_ros2/build/limo_gazebosim
+[2.255s] -- Install configuration: ""
+[2.256s] -- Execute custom install script
+[2.258s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/launch/limo_gazebo_ackerman_drive.launch.py
+[2.259s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/launch/limo_gazebo_assessment.launch.py
+[2.260s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/launch/limo_gazebo_diff.launch.py
+[2.261s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/launch/limo_gazebo_mecanum_drive.launch.py
+[2.262s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/launch/limo_gazebo_track_drive.launch.py
+[2.263s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/rviz/urdf.rviz
+[2.264s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/worlds/potholes.world
+[2.265s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/worlds/potholes_simple.world
+[2.266s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/worlds/simple.world
+[2.267s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/worlds/simulation_table.world
+[2.268s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/worlds/simulation_table_small.world
+[2.268s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/worlds/simulation_table_with_obstacles.world
+[2.274s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/Apriltag36_11_00000/materials/scripts/Apriltag.material
+[2.275s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/Apriltag36_11_00000/materials/textures/tag36_11_00000.png
+[2.277s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/Apriltag36_11_00000/meshes/tag36_11_00000.dae
+[2.278s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/Apriltag36_11_00000/model.config
+[2.278s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/Apriltag36_11_00000/model.sdf
+[2.279s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/Apriltag36_11_00001/materials/scripts/Apriltag.material
+[2.280s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/Apriltag36_11_00001/materials/textures/tag36_11_00001.png
+[2.280s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/Apriltag36_11_00001/model.config
+[2.282s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/Apriltag36_11_00001/model.sdf
+[2.282s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/Apriltag36_11_00002/materials/scripts/Apriltag.material
+[2.284s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/Apriltag36_11_00002/materials/textures/tag36_11_00002.png
+[2.285s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/Apriltag36_11_00002/model.config
+[2.285s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/Apriltag36_11_00002/model.sdf
+[2.288s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/Apriltag36_11_00003/materials/scripts/Apriltag.material
+[2.288s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/Apriltag36_11_00003/materials/textures/tag36_11_00003.png
+[2.289s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/Apriltag36_11_00003/model.config
+[2.290s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/Apriltag36_11_00003/model.sdf
+[2.291s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/potholes/materials/scripts/potholes.material
+[2.293s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/potholes/materials/textures/background_potholes.png
+[2.293s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/potholes/model.config
+[2.294s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/potholes/model.sdf
+[2.295s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/potholes_simple/materials/scripts/potholes_simple.material
+[2.296s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/potholes_simple/materials/textures/background_potholes_simple.png
+[2.298s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/potholes_simple/model.config
+[2.300s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/potholes_simple/model.sdf
+[2.301s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simple.stl
+[2.302s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table/materials/scripts/simulation_table.material
+[2.303s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table/materials/textures/background (copy).png
+[2.305s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table/materials/textures/background.png
+[2.306s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table/materials/textures/background_low.png
+[2.307s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table/materials/textures/simulation_table_vector.svg
+[2.308s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table/model.config
+[2.309s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table/model.sdf
+[2.310s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table_small/materials/scripts/simulation_table_small.material
+[2.311s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table_small/materials/textures/background_small.png
+[2.313s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table_small/model.config
+[2.315s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table_small/model.sdf
+[2.315s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table_with_obstacles/materials/scripts/simulation_table.material
+[2.316s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table_with_obstacles/materials/textures/background (copy).png
+[2.318s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table_with_obstacles/materials/textures/background.png
+[2.319s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table_with_obstacles/materials/textures/background_low.png
+[2.320s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table_with_obstacles/materials/textures/simulation_table_vector.svg
+[2.321s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table_with_obstacles/model.config
+[2.322s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/models/simulation_table_with_obstacles/model.sdf
+[2.323s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/environment/pythonpath.sh
+[2.324s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/environment/pythonpath.dsv
+[2.325s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/lib/python3.10/site-packages/limo_gazebosim-0.0.0-py3.10.egg-info/PKG-INFO
+[2.326s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/lib/python3.10/site-packages/limo_gazebosim-0.0.0-py3.10.egg-info/SOURCES.txt
+[2.327s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/lib/python3.10/site-packages/limo_gazebosim-0.0.0-py3.10.egg-info/dependency_links.txt
+[2.329s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/lib/python3.10/site-packages/limo_gazebosim-0.0.0-py3.10.egg-info/top_level.txt
+[2.330s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/lib/python3.10/site-packages/limo_gazebosim/__init__.py
+[2.331s] -- Symlinking: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/lib/limo_gazebosim/twist_watchdog.py
+[2.366s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/ament_index/resource_index/package_run_dependencies/limo_gazebosim
+[2.368s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/ament_index/resource_index/parent_prefix_path/limo_gazebosim
+[2.369s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/environment/ament_prefix_path.sh
+[2.370s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/environment/ament_prefix_path.dsv
+[2.371s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/environment/path.sh
+[2.372s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/environment/path.dsv
+[2.372s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/local_setup.bash
+[2.374s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/local_setup.sh
+[2.375s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/local_setup.zsh
+[2.377s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/local_setup.dsv
+[2.377s] -- Symlinking: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/package.dsv
+[2.409s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/ament_index/resource_index/packages/limo_gazebosim
+[2.410s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/cmake/limo_gazebosimConfig.cmake
+[2.411s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/cmake/limo_gazebosimConfig-version.cmake
+[2.412s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_gazebosim/share/limo_gazebosim/package.xml
+[2.483s] Listing '/home/ben/KV6022_limo_ros2/install/limo_gazebosim/lib/python3.10/site-packages/limo_gazebosim'...
+[2.492s] Invoked command in '/home/ben/KV6022_limo_ros2/build/limo_gazebosim' returned '0': AMENT_PREFIX_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs:/home/ben/KV6022_limo_ros2/install/limo_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs:/home/ben/KV6022_limo_ros2/install/limo_description:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ros2) LD_LIBRARY_PATH=/home/ben/KV6022_limo_ros2/install/limo_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ben/KV6022_limo_ros2/install/limo_msgs/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/ben/KV6022_limo_ros2/build/limo_gazebosim

@@ -1,0 +1,37 @@
+[3.404s] Invoking command in '/home/ben/KV6022_limo_ros2/build/KV6022_assessment': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/ben/KV6022_limo_ros2/build/KV6022_assessment/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ben/KV6022_limo_ros2/install/KV6022_assessment/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ben/KV6022_limo_ros2/build/KV6022_assessment/build --no-deps symlink_data
+[3.898s] running develop
+[4.269s] running egg_info
+[4.269s] creating KV6022_assessment.egg-info
+[4.270s] writing KV6022_assessment.egg-info/PKG-INFO
+[4.270s] writing dependency_links to KV6022_assessment.egg-info/dependency_links.txt
+[4.271s] writing entry points to KV6022_assessment.egg-info/entry_points.txt
+[4.271s] writing requirements to KV6022_assessment.egg-info/requires.txt
+[4.272s] writing top-level names to KV6022_assessment.egg-info/top_level.txt
+[4.272s] writing manifest file 'KV6022_assessment.egg-info/SOURCES.txt'
+[4.276s] reading manifest file 'KV6022_assessment.egg-info/SOURCES.txt'
+[4.276s] writing manifest file 'KV6022_assessment.egg-info/SOURCES.txt'
+[4.278s] running build_ext
+[4.278s] Creating /home/ben/KV6022_limo_ros2/install/KV6022_assessment/lib/python3.10/site-packages/KV6022-assessment.egg-link (link to .)
+[4.280s] Installing example_nav_through_poses script to /home/ben/KV6022_limo_ros2/install/KV6022_assessment/lib/KV6022_assessment
+[4.280s] Installing example_nav_to_pose script to /home/ben/KV6022_limo_ros2/install/KV6022_assessment/lib/KV6022_assessment
+[4.283s] Installing example_opencv_detector script to /home/ben/KV6022_limo_ros2/install/KV6022_assessment/lib/KV6022_assessment
+[4.285s] Installing example_waypoint_follower script to /home/ben/KV6022_limo_ros2/install/KV6022_assessment/lib/KV6022_assessment
+[4.286s] 
+[4.286s] Installed /home/ben/KV6022_limo_ros2/build/KV6022_assessment
+[4.286s] running symlink_data
+[4.286s] creating /home/ben/KV6022_limo_ros2/install/KV6022_assessment/share/ament_index
+[4.287s] creating /home/ben/KV6022_limo_ros2/install/KV6022_assessment/share/ament_index/resource_index
+[4.287s] creating /home/ben/KV6022_limo_ros2/install/KV6022_assessment/share/ament_index/resource_index/packages
+[4.287s] symbolically linking /home/ben/KV6022_limo_ros2/build/KV6022_assessment/resource/KV6022_assessment -> /home/ben/KV6022_limo_ros2/install/KV6022_assessment/share/ament_index/resource_index/packages
+[4.288s] symbolically linking /home/ben/KV6022_limo_ros2/build/KV6022_assessment/package.xml -> /home/ben/KV6022_limo_ros2/install/KV6022_assessment/share/KV6022_assessment
+[4.288s] creating /home/ben/KV6022_limo_ros2/install/KV6022_assessment/share/KV6022_assessment/launch
+[4.288s] symbolically linking /home/ben/KV6022_limo_ros2/build/KV6022_assessment/launch/limo_navigation.launch.py -> /home/ben/KV6022_limo_ros2/install/KV6022_assessment/share/KV6022_assessment/launch
+[4.288s] creating /home/ben/KV6022_limo_ros2/install/KV6022_assessment/share/KV6022_assessment/params
+[4.289s] symbolically linking /home/ben/KV6022_limo_ros2/build/KV6022_assessment/params/nav2_params.yaml -> /home/ben/KV6022_limo_ros2/install/KV6022_assessment/share/KV6022_assessment/params
+[4.289s] creating /home/ben/KV6022_limo_ros2/install/KV6022_assessment/share/KV6022_assessment/maps
+[4.290s] symbolically linking /home/ben/KV6022_limo_ros2/build/KV6022_assessment/maps/potholes_20mm.yaml -> /home/ben/KV6022_limo_ros2/install/KV6022_assessment/share/KV6022_assessment/maps
+[4.290s] symbolically linking /home/ben/KV6022_limo_ros2/build/KV6022_assessment/maps/potholes_20mm.pgm -> /home/ben/KV6022_limo_ros2/install/KV6022_assessment/share/KV6022_assessment/maps
+[4.290s] creating /home/ben/KV6022_limo_ros2/install/KV6022_assessment/share/KV6022_assessment/rviz
+[4.291s] symbolically linking /home/ben/KV6022_limo_ros2/build/KV6022_assessment/rviz/limo_navigation.rviz -> /home/ben/KV6022_limo_ros2/install/KV6022_assessment/share/KV6022_assessment/rviz
+[4.291s] symbolically linking /home/ben/KV6022_limo_ros2/build/KV6022_assessment/rviz/slam_toolbox_default.rviz -> /home/ben/KV6022_limo_ros2/install/KV6022_assessment/share/KV6022_assessment/rviz
+[4.357s] Invoked command in '/home/ben/KV6022_limo_ros2/build/KV6022_assessment' returned '0': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/ben/KV6022_limo_ros2/build/KV6022_assessment/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ben/KV6022_limo_ros2/install/KV6022_assessment/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ben/KV6022_limo_ros2/build/KV6022_assessment/build --no-deps symlink_data

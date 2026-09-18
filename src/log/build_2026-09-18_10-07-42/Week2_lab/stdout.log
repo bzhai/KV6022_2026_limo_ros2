@@ -1,0 +1,22 @@
+running develop
+running egg_info
+creating Week2_lab.egg-info
+writing Week2_lab.egg-info/PKG-INFO
+writing dependency_links to Week2_lab.egg-info/dependency_links.txt
+writing entry points to Week2_lab.egg-info/entry_points.txt
+writing requirements to Week2_lab.egg-info/requires.txt
+writing top-level names to Week2_lab.egg-info/top_level.txt
+writing manifest file 'Week2_lab.egg-info/SOURCES.txt'
+reading manifest file 'Week2_lab.egg-info/SOURCES.txt'
+writing manifest file 'Week2_lab.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/ben/KV6022_limo_ros2/src/install/Week2_lab/lib/python3.10/site-packages/Week2-lab.egg-link (link to .)
+Installing command_publisher script to /home/ben/KV6022_limo_ros2/src/install/Week2_lab/lib/Week2_lab
+
+Installed /home/ben/KV6022_limo_ros2/src/build/Week2_lab
+running symlink_data
+creating /home/ben/KV6022_limo_ros2/src/install/Week2_lab/share/ament_index
+creating /home/ben/KV6022_limo_ros2/src/install/Week2_lab/share/ament_index/resource_index
+creating /home/ben/KV6022_limo_ros2/src/install/Week2_lab/share/ament_index/resource_index/packages
+symbolically linking /home/ben/KV6022_limo_ros2/src/build/Week2_lab/resource/Week2_lab -> /home/ben/KV6022_limo_ros2/src/install/Week2_lab/share/ament_index/resource_index/packages
+symbolically linking /home/ben/KV6022_limo_ros2/src/build/Week2_lab/package.xml -> /home/ben/KV6022_limo_ros2/src/install/Week2_lab/share/Week2_lab

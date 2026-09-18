@@ -1,0 +1,33 @@
+[1.366s] Invoking command in '/home/ben/KV6022_limo_ros2/src/Week2_lab': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/ben/KV6022_limo_ros2/src/Week2_lab/build/Week2_lab/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ben/KV6022_limo_ros2/src/Week2_lab/install/Week2_lab/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/Week2_lab build --build-base /home/ben/KV6022_limo_ros2/src/Week2_lab/build/Week2_lab/build install --record /home/ben/KV6022_limo_ros2/src/Week2_lab/build/Week2_lab/install.log --install-scripts $base/lib/Week2_lab --single-version-externally-managed install_data
+[1.811s] running egg_info
+[1.811s] creating build/Week2_lab/Week2_lab.egg-info
+[1.812s] writing build/Week2_lab/Week2_lab.egg-info/PKG-INFO
+[1.812s] writing dependency_links to build/Week2_lab/Week2_lab.egg-info/dependency_links.txt
+[1.813s] writing entry points to build/Week2_lab/Week2_lab.egg-info/entry_points.txt
+[1.813s] writing requirements to build/Week2_lab/Week2_lab.egg-info/requires.txt
+[1.813s] writing top-level names to build/Week2_lab/Week2_lab.egg-info/top_level.txt
+[1.813s] writing manifest file 'build/Week2_lab/Week2_lab.egg-info/SOURCES.txt'
+[1.815s] reading manifest file 'build/Week2_lab/Week2_lab.egg-info/SOURCES.txt'
+[1.816s] writing manifest file 'build/Week2_lab/Week2_lab.egg-info/SOURCES.txt'
+[1.816s] running build
+[1.817s] running build_py
+[1.817s] creating /home/ben/KV6022_limo_ros2/src/Week2_lab/build/Week2_lab/build
+[1.817s] creating /home/ben/KV6022_limo_ros2/src/Week2_lab/build/Week2_lab/build/lib
+[1.817s] creating /home/ben/KV6022_limo_ros2/src/Week2_lab/build/Week2_lab/build/lib/Week2_lab
+[1.818s] copying Week2_lab/__init__.py -> /home/ben/KV6022_limo_ros2/src/Week2_lab/build/Week2_lab/build/lib/Week2_lab
+[1.818s] running install
+[1.818s] running install_lib
+[1.820s] creating /home/ben/KV6022_limo_ros2/src/Week2_lab/install/Week2_lab/lib/python3.10/site-packages/Week2_lab
+[1.820s] copying /home/ben/KV6022_limo_ros2/src/Week2_lab/build/Week2_lab/build/lib/Week2_lab/__init__.py -> /home/ben/KV6022_limo_ros2/src/Week2_lab/install/Week2_lab/lib/python3.10/site-packages/Week2_lab
+[1.821s] byte-compiling /home/ben/KV6022_limo_ros2/src/Week2_lab/install/Week2_lab/lib/python3.10/site-packages/Week2_lab/__init__.py to __init__.cpython-310.pyc
+[1.821s] running install_data
+[1.821s] creating /home/ben/KV6022_limo_ros2/src/Week2_lab/install/Week2_lab/share/ament_index
+[1.822s] creating /home/ben/KV6022_limo_ros2/src/Week2_lab/install/Week2_lab/share/ament_index/resource_index
+[1.822s] creating /home/ben/KV6022_limo_ros2/src/Week2_lab/install/Week2_lab/share/ament_index/resource_index/packages
+[1.822s] copying resource/Week2_lab -> /home/ben/KV6022_limo_ros2/src/Week2_lab/install/Week2_lab/share/ament_index/resource_index/packages
+[1.823s] copying package.xml -> /home/ben/KV6022_limo_ros2/src/Week2_lab/install/Week2_lab/share/Week2_lab
+[1.823s] running install_egg_info
+[1.825s] Copying build/Week2_lab/Week2_lab.egg-info to /home/ben/KV6022_limo_ros2/src/Week2_lab/install/Week2_lab/lib/python3.10/site-packages/Week2_lab-0.0.0-py3.10.egg-info
+[1.828s] running install_scripts
+[1.859s] writing list of installed files to '/home/ben/KV6022_limo_ros2/src/Week2_lab/build/Week2_lab/install.log'
+[1.879s] Invoked command in '/home/ben/KV6022_limo_ros2/src/Week2_lab' returned '0': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/ben/KV6022_limo_ros2/src/Week2_lab/build/Week2_lab/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ben/KV6022_limo_ros2/src/Week2_lab/install/Week2_lab/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/Week2_lab build --build-base /home/ben/KV6022_limo_ros2/src/Week2_lab/build/Week2_lab/build install --record /home/ben/KV6022_limo_ros2/src/Week2_lab/build/Week2_lab/install.log --install-scripts $base/lib/Week2_lab --single-version-externally-managed install_data

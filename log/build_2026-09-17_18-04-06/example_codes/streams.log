@@ -1,0 +1,23 @@
+[3.374s] Invoking command in '/home/ben/KV6022_limo_ros2/build/example_codes': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/ben/KV6022_limo_ros2/build/example_codes/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ben/KV6022_limo_ros2/build/example_codes/build --no-deps symlink_data
+[3.879s] running develop
+[4.261s] running egg_info
+[4.262s] creating example_codes.egg-info
+[4.262s] writing example_codes.egg-info/PKG-INFO
+[4.262s] writing dependency_links to example_codes.egg-info/dependency_links.txt
+[4.262s] writing entry points to example_codes.egg-info/entry_points.txt
+[4.262s] writing requirements to example_codes.egg-info/requires.txt
+[4.263s] writing top-level names to example_codes.egg-info/top_level.txt
+[4.263s] writing manifest file 'example_codes.egg-info/SOURCES.txt'
+[4.264s] reading manifest file 'example_codes.egg-info/SOURCES.txt'
+[4.265s] writing manifest file 'example_codes.egg-info/SOURCES.txt'
+[4.272s] running build_ext
+[4.272s] Creating /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example-codes.egg-link (link to .)
+[4.273s] 
+[4.273s] Installed /home/ben/KV6022_limo_ros2/build/example_codes
+[4.274s] running symlink_data
+[4.274s] creating /home/ben/KV6022_limo_ros2/install/example_codes/share/ament_index
+[4.274s] creating /home/ben/KV6022_limo_ros2/install/example_codes/share/ament_index/resource_index
+[4.274s] creating /home/ben/KV6022_limo_ros2/install/example_codes/share/ament_index/resource_index/packages
+[4.275s] symbolically linking /home/ben/KV6022_limo_ros2/build/example_codes/resource/example_codes -> /home/ben/KV6022_limo_ros2/install/example_codes/share/ament_index/resource_index/packages
+[4.276s] symbolically linking /home/ben/KV6022_limo_ros2/build/example_codes/package.xml -> /home/ben/KV6022_limo_ros2/install/example_codes/share/example_codes
+[4.301s] Invoked command in '/home/ben/KV6022_limo_ros2/build/example_codes' returned '0': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/ben/KV6022_limo_ros2/build/example_codes/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ben/KV6022_limo_ros2/build/example_codes/build --no-deps symlink_data

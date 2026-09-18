@@ -1,0 +1,44 @@
+running develop
+Removing /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/python3.10/site-packages/trajectory-referee.egg-link (link to .)
+running egg_info
+writing ../../build/trajectory_referee/trajectory_referee.egg-info/PKG-INFO
+writing dependency_links to ../../build/trajectory_referee/trajectory_referee.egg-info/dependency_links.txt
+writing entry points to ../../build/trajectory_referee/trajectory_referee.egg-info/entry_points.txt
+writing requirements to ../../build/trajectory_referee/trajectory_referee.egg-info/requires.txt
+writing top-level names to ../../build/trajectory_referee/trajectory_referee.egg-info/top_level.txt
+reading manifest file '../../build/trajectory_referee/trajectory_referee.egg-info/SOURCES.txt'
+writing manifest file '../../build/trajectory_referee/trajectory_referee.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/ben/KV6022_limo_ros2/build/trajectory_referee/build
+creating /home/ben/KV6022_limo_ros2/build/trajectory_referee/build/lib
+creating /home/ben/KV6022_limo_ros2/build/trajectory_referee/build/lib/trajectory_referee
+copying trajectory_referee/trajectory_publisher.py -> /home/ben/KV6022_limo_ros2/build/trajectory_referee/build/lib/trajectory_referee
+copying trajectory_referee/print_state.py -> /home/ben/KV6022_limo_ros2/build/trajectory_referee/build/lib/trajectory_referee
+copying trajectory_referee/__init__.py -> /home/ben/KV6022_limo_ros2/build/trajectory_referee/build/lib/trajectory_referee
+copying trajectory_referee/record_pose.py -> /home/ben/KV6022_limo_ros2/build/trajectory_referee/build/lib/trajectory_referee
+copying trajectory_referee/print_waypoint.py -> /home/ben/KV6022_limo_ros2/build/trajectory_referee/build/lib/trajectory_referee
+running install
+running install_lib
+creating /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/python3.10/site-packages/trajectory_referee
+copying /home/ben/KV6022_limo_ros2/build/trajectory_referee/build/lib/trajectory_referee/trajectory_publisher.py -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/python3.10/site-packages/trajectory_referee
+copying /home/ben/KV6022_limo_ros2/build/trajectory_referee/build/lib/trajectory_referee/print_state.py -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/python3.10/site-packages/trajectory_referee
+copying /home/ben/KV6022_limo_ros2/build/trajectory_referee/build/lib/trajectory_referee/__init__.py -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/python3.10/site-packages/trajectory_referee
+copying /home/ben/KV6022_limo_ros2/build/trajectory_referee/build/lib/trajectory_referee/record_pose.py -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/python3.10/site-packages/trajectory_referee
+copying /home/ben/KV6022_limo_ros2/build/trajectory_referee/build/lib/trajectory_referee/print_waypoint.py -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/python3.10/site-packages/trajectory_referee
+byte-compiling /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/python3.10/site-packages/trajectory_referee/trajectory_publisher.py to trajectory_publisher.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/python3.10/site-packages/trajectory_referee/print_state.py to print_state.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/python3.10/site-packages/trajectory_referee/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/python3.10/site-packages/trajectory_referee/record_pose.py to record_pose.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/python3.10/site-packages/trajectory_referee/print_waypoint.py to print_waypoint.cpython-310.pyc
+running install_data
+copying resource/trajectory_referee -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/ament_index/resource_index/packages
+copying package.xml -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/trajectory_referee
+copying routes/route1.pkl -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/trajectory_referee/routes
+copying routes/route2.pkl -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/trajectory_referee/routes
+copying routes/route3.pkl -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/trajectory_referee/routes
+running install_egg_info
+Copying ../../build/trajectory_referee/trajectory_referee.egg-info to /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/python3.10/site-packages/trajectory_referee-0.0.0-py3.10.egg-info
+running install_scripts
+Installing trajectory_publisher script to /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/trajectory_referee
+writing list of installed files to '/home/ben/KV6022_limo_ros2/build/trajectory_referee/install.log'

@@ -1,0 +1,71 @@
+[0.128s] Invoking command in '/home/ben/KV6022_limo_ros2/build/limo_description': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(ros2) /usr/bin/cmake /home/ben/KV6022_limo_ros2/src/limo_description -DCMAKE_INSTALL_PREFIX=/home/ben/KV6022_limo_ros2/install/limo_description
+[2.304s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[2.305s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[2.306s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.306s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.306s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.306s] -- Added test 'lint_cmake' to check CMake code style
+[2.306s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[2.306s] -- Added test 'xmllint' to check XML markup files
+[2.306s] -- Configuring done
+[2.307s] -- Generating done
+[2.307s] -- Build files have been written to: /home/ben/KV6022_limo_ros2/build/limo_description
+[2.917s] Invoked command in '/home/ben/KV6022_limo_ros2/build/limo_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(ros2) /usr/bin/cmake /home/ben/KV6022_limo_ros2/src/limo_description -DCMAKE_INSTALL_PREFIX=/home/ben/KV6022_limo_ros2/install/limo_description
+[2.917s] Invoking command in '/home/ben/KV6022_limo_ros2/build/limo_description': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(ros2) /usr/bin/cmake --build /home/ben/KV6022_limo_ros2/build/limo_description -- -j8 -l8
+[3.300s] Invoked command in '/home/ben/KV6022_limo_ros2/build/limo_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(ros2) /usr/bin/cmake --build /home/ben/KV6022_limo_ros2/build/limo_description -- -j8 -l8
+[3.386s] Invoking command in '/home/ben/KV6022_limo_ros2/build/limo_description': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(ros2) /usr/bin/cmake --install /home/ben/KV6022_limo_ros2/build/limo_description
+[3.432s] -- Install configuration: ""
+[3.432s] -- Execute custom install script
+[3.435s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/launch/display_models_diff.launch.py
+[3.436s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/rviz/model_display.rviz
+[3.438s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/rviz/model_sensors_real.rviz
+[3.442s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/rviz/urdf.rviz
+[3.444s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/arrow_texture.png
+[3.445s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/face.png
+[3.450s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/lcd_screen_texture.png
+[3.452s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/limo_base.dae
+[3.453s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/limo_base.stl
+[3.453s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/limo_base_lite.dae
+[3.455s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/limo_optimal.dae
+[3.456s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/limo_optimal_wheels.dae
+[3.457s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/limo_texture.png
+[3.459s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/limo_wheel.dae
+[3.460s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/limo_wheel.stl
+[3.461s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/limo_wheel_lite.dae
+[3.462s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/mec_wheel_front_left.dae
+[3.463s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/mec_wheel_front_right.dae
+[3.463s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/rotw2_rviz.png
+[3.465s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/sidescreentexture.png
+[3.465s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/steering.dae
+[3.466s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/meshes/steering_texture.png
+[3.472s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_ackerman/limo_ackerman.gazebo
+[3.472s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_ackerman/limo_ackerman.xacro
+[3.472s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_diff/limo_diff.gazebo
+[3.476s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_diff/limo_diff.xacro
+[3.476s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_gazebo.xacro
+[3.477s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_mecanum/backup previous/limo_gazebo.gazebo
+[3.480s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_mecanum/backup previous/limo_mecanum.xacro
+[3.481s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_mecanum/backup previous/limo_mecanum_with_arm.xacro
+[3.484s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_mecanum/backup previous/limo_s2.gazebo
+[3.484s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_mecanum/backup previous/limo_xacro.xacro
+[3.488s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_mecanum/limo_mecanum.gazebo
+[3.491s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_mecanum/limo_mecanum.xacro
+[3.491s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_properties.xacro
+[3.492s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_track/limo_track.gazebo
+[3.494s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_track/limo_track.xacro
+[3.495s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/ament_index/resource_index/package_run_dependencies/limo_description
+[3.499s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/ament_index/resource_index/parent_prefix_path/limo_description
+[3.503s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/environment/ament_prefix_path.sh
+[3.504s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/environment/ament_prefix_path.dsv
+[3.506s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/environment/path.sh
+[3.510s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/environment/path.dsv
+[3.512s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/local_setup.bash
+[3.514s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/local_setup.sh
+[3.516s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/local_setup.zsh
+[3.521s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/local_setup.dsv
+[3.523s] -- Symlinking: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/package.dsv
+[3.609s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/ament_index/resource_index/packages/limo_description
+[3.616s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/cmake/limo_descriptionConfig.cmake
+[3.617s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/cmake/limo_descriptionConfig-version.cmake
+[3.620s] -- Up-to-date symlink: /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/package.xml
+[3.634s] Invoked command in '/home/ben/KV6022_limo_ros2/build/limo_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(ros2) /usr/bin/cmake --install /home/ben/KV6022_limo_ros2/build/limo_description

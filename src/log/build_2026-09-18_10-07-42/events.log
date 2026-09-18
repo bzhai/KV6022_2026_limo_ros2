@@ -1,0 +1,64 @@
+[0.000000] (-) TimerEvent: {}
+[0.000743] (-) JobUnselected: {'identifier': 'KV6022_assessment'}
+[0.000819] (-) JobUnselected: {'identifier': 'example_codes'}
+[0.000905] (-) JobUnselected: {'identifier': 'limo_description'}
+[0.000952] (-) JobUnselected: {'identifier': 'limo_gazebosim'}
+[0.001015] (-) JobUnselected: {'identifier': 'limo_msgs'}
+[0.001095] (-) JobUnselected: {'identifier': 'trajectory_referee'}
+[0.001187] (-) JobUnselected: {'identifier': 'trajectory_skeleton'}
+[0.001392] (Week2_lab) JobQueued: {'identifier': 'Week2_lab', 'dependencies': OrderedDict()}
+[0.004106] (Week2_lab) JobStarted: {'identifier': 'Week2_lab'}
+[0.100472] (-) TimerEvent: {}
+[0.200929] (-) TimerEvent: {}
+[0.301605] (-) TimerEvent: {}
+[0.402092] (-) TimerEvent: {}
+[0.502655] (-) TimerEvent: {}
+[0.603538] (-) TimerEvent: {}
+[0.704134] (-) TimerEvent: {}
+[0.804648] (-) TimerEvent: {}
+[0.905346] (-) TimerEvent: {}
+[1.006119] (-) TimerEvent: {}
+[1.106772] (-) TimerEvent: {}
+[1.207149] (-) TimerEvent: {}
+[1.307751] (-) TimerEvent: {}
+[1.408418] (-) TimerEvent: {}
+[1.508907] (-) TimerEvent: {}
+[1.609822] (-) TimerEvent: {}
+[1.710280] (-) TimerEvent: {}
+[1.798526] (Week2_lab) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/ben/KV6022_limo_ros2/src/build/Week2_lab/build', '--no-deps', 'symlink_data'], 'cwd': '/home/ben/KV6022_limo_ros2/src/build/Week2_lab', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/ben'), ('CURSOR_EXTENSION_HOST_ROLE', 'agent-exec'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('CONDA_PROMPT_MODIFIER', '(ros2)'), ('HTTPS_PROXY', 'http://127.0.0.1:45993'), ('no_proxy', '127.0.0.1,::1,localhost'), ('LANGUAGE', 'en_GB:en'), ('GIT_SSH_COMMAND', "CURSOR_SANDBOX_GIT_SSH_COMMAND=1 '/tmp/.mount_cursorLIlPOg/usr/share/cursor/resources/app/resources/helpers/cursorsandbox' git-ssh-dial 45953 1ccb98afbdc6638de98d1222f519ba65"), ('USER', 'ben'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en-gb","osLocale":"en-gb","resolvedLanguage":"en","defaultMessagesFile":"/tmp/.mount_cursorLIlPOg/usr/share/cursor/resources/app/out/nls.messages.json","locale":"en-gb","availableLanguages":{}}'), ('all_proxy', 'http://127.0.0.1:45993'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'wayland'), ('CURSOR_RIPGREP_PATH', '/tmp/.mount_cursorLIlPOg/usr/share/cursor/resources/app/node_modules/@vscode/ripgrep/bin/rg'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/tmp/.mount_cursorLIlPOg/usr/lib/:/tmp/.mount_cursorLIlPOg/usr/lib32/:/tmp/.mount_cursorLIlPOg/usr/lib64/:/tmp/.mount_cursorLIlPOg/lib/:/tmp/.mount_cursorLIlPOg/lib/i386-linux-gnu/:/tmp/.mount_cursorLIlPOg/lib/x86_64-linux-gnu/:/tmp/.mount_cursorLIlPOg/lib/aarch64-linux-gnu/:/tmp/.mount_cursorLIlPOg/lib32/:/tmp/.mount_cursorLIlPOg/lib64/:'), ('SOCKS_PROXY', 'socks5://127.0.0.1:45953'), ('HOME', '/home/ben'), ('CHROME_DESKTOP', 'cursor.desktop'), ('APPDIR', '/tmp/.mount_cursorLIlPOg'), ('CONDA_SHLVL', '4'), ('DESKTOP_SESSION', 'ubuntu'), ('NO_PROXY', '127.0.0.1,::1,localhost'), ('PERLLIB', '/tmp/.mount_cursorLIlPOg/usr/share/perl5/:/tmp/.mount_cursorLIlPOg/usr/lib/perl5/:'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-6f14cfc3-3.15-main.sock'), ('GIO_LAUNCHED_DESKTOP_FILE', '/home/ben/.local/share/applications/cursor.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('CURSOR_ORIG_UID', '1000'), ('CURSOR_WORKSPACE_LABEL', 'src'), ('MANAGERPID', '1179'), ('SYSTEMD_EXEC_PID', '1395'), ('IM_CONFIG_CHECK_ENV', '1'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('_CE_M', ''), ('_CONDA_ROOT', '/home/ben/miniconda3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '2974'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('https_proxy', 'http://127.0.0.1:45993'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ben'), ('FORCE_COLOR', '0'), ('ALL_PROXY', 'http://127.0.0.1:45993'), ('OWD', '/home/ben'), ('http_proxy', 'http://127.0.0.1:45993'), ('JOURNAL_STREAM', '8:24018'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CURSOR_LAYOUT', 'unifiedAgent'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ben'), ('socks_proxy', 'socks5://127.0.0.1:45953'), ('TERM', 'dumb'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('SOCKS5_PROXY', 'socks5://127.0.0.1:45953'), ('_CE_CONDA', ''), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/tmp/.mount_cursorLIlPOg/usr/share/cursor/resources/app/node_modules/@vscode/ripgrep/bin:/home/ben/miniconda3/envs/ros2/bin:/home/ben/miniconda3/condabin:/opt/ros/humble/bin:/tmp/.mount_cursorLIlPOg/usr/bin:/tmp/.mount_cursorLIlPOg/usr/sbin:/tmp/.mount_cursorLIlPOg/usr/games:/tmp/.mount_cursorLIlPOg/bin:/tmp/.mount_cursorLIlPOg/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ben-Virtual-Machine:@/tmp/.ICE-unix/1333,unix/ben-Virtual-Machine:/tmp/.ICE-unix/1333'), ('INVOCATION_ID', '3fc2b0fa5bc04b889e378fc3b6ddc66d'), ('APPIMAGE', '/opt/cursor/cursor.AppImage'), ('XDG_MENU_PREFIX', 'gnome-'), ('VSCODE_PROCESS_TITLE', 'extension-host (agent-exec) src [4-18]'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'wayland'), ('AGENT_TRANSCRIPTS', '/home/ben/.cursor/projects/home-ben-KV6022-limo-ros2-src/agent-transcripts'), ('CURSOR_AGENT', '1'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('CONDA_PREFIX_1', '/home/ben/miniconda3'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.O92UV3'), ('LS_COLORS', ''), ('CONDA_PREFIX_2', '/home/ben/miniconda3/envs/ros2'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/tmp/.mount_cursorLIlPOg/usr/share/glib-2.0/schemas/:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/ben/miniconda3/bin/python'), ('CONDA_PREFIX_3', '/home/ben/miniconda3'), ('SHELL', '/bin/bash'), ('CURSOR_SANDBOX', 'native'), ('ARGV0', '/opt/cursor/cursor.AppImage'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CONDA_DEFAULT_ENV', 'ros2'), ('GIT_HTTP_PROXY', 'http://127.0.0.1:45993'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('_CONDA_EXE', '/home/ben/miniconda3/bin/conda'), ('socks5_proxy', 'socks5://127.0.0.1:45953'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ben/KV6022_limo_ros2/src/build/Week2_lab'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/ben/miniconda3/bin/conda'), ('VSCODE_CODE_CACHE_PATH', '/home/ben/.config/Cursor/CachedData/a1f686545fd0ce8917bbd2449f733551a9bce420'), ('CURSOR_ORIG_GID', '1000'), ('XDG_DATA_DIRS', '/tmp/.mount_cursorLIlPOg/usr/share/:/usr/local/share:/usr/share:/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('GIT_HTTPS_PROXY', 'http://127.0.0.1:45993'), ('CURSOR_CONVERSATION_ID', '1679865d-3f36-45bd-b151-15e9172a8a77'), ('PYTHONPATH', '/home/ben/KV6022_limo_ros2/src/build/Week2_lab/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ben/KV6022_limo_ros2/src/install/Week2_lab/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:45993'), ('CONDA_PREFIX', '/home/ben/miniconda3/envs/ros2'), ('QT_PLUGIN_PATH', '/tmp/.mount_cursorLIlPOg/usr/lib/qt4/plugins/:/tmp/.mount_cursorLIlPOg/usr/lib/i386-linux-gnu/qt4/plugins/:/tmp/.mount_cursorLIlPOg/usr/lib/x86_64-linux-gnu/qt4/plugins/:/tmp/.mount_cursorLIlPOg/usr/lib/aarch64-linux-gnu/qt4/plugins/:/tmp/.mount_cursorLIlPOg/usr/lib32/qt4/plugins/:/tmp/.mount_cursorLIlPOg/usr/lib64/qt4/plugins/:/tmp/.mount_cursorLIlPOg/usr/lib/qt5/plugins/:/tmp/.mount_cursorLIlPOg/usr/lib/i386-linux-gnu/qt5/plugins/:/tmp/.mount_cursorLIlPOg/usr/lib/x86_64-linux-gnu/qt5/plugins/:/tmp/.mount_cursorLIlPOg/usr/lib/aarch64-linux-gnu/qt5/plugins/:/tmp/.mount_cursorLIlPOg/usr/lib32/qt5/plugins/:/tmp/.mount_cursorLIlPOg/usr/lib64/qt5/plugins/:'), ('COLCON', '1'), ('__CURSOR_SANDBOX_ENV_RESTORE', "builtin export HTTP_PROXY='http://127.0.0.1:45993'; builtin export HTTPS_PROXY='http://127.0.0.1:45993'; builtin export http_proxy='http://127.0.0.1:45993'; builtin export https_proxy='http://127.0.0.1:45993'; builtin export GIT_HTTP_PROXY='http://127.0.0.1:45993'; builtin export GIT_HTTPS_PROXY='http://127.0.0.1:45993'; builtin export SOCKS_PROXY='socks5://127.0.0.1:45953'; builtin export SOCKS5_PROXY='socks5://127.0.0.1:45953'; builtin export socks_proxy='socks5://127.0.0.1:45953'; builtin export socks5_proxy='socks5://127.0.0.1:45953'; builtin export ALL_PROXY='http://127.0.0.1:45993'; builtin export all_proxy='http://127.0.0.1:45993'; builtin export NO_PROXY='127.0.0.1,::1,localhost'; builtin export no_proxy='127.0.0.1,::1,localhost'; builtin export GIT_SSH_COMMAND='CURSOR_SANDBOX_GIT_SSH_COMMAND=1 '\\''/tmp/.mount_cursorLIlPOg/usr/share/cursor/resources/app/resources/helpers/cursorsandbox'\\'' git-ssh-dial 45953 1ccb98afbdc6638de98d1222f519ba65'"), ('_ZO_DOCTOR', '0'), ('CURSOR_SANDBOX_LANDLOCK_STATUS', 'fully_enforced'), ('VSCODE_PID', '2974')]), 'shell': False}
+[1.811415] (-) TimerEvent: {}
+[1.912251] (-) TimerEvent: {}
+[2.012956] (-) TimerEvent: {}
+[2.113796] (-) TimerEvent: {}
+[2.215426] (-) TimerEvent: {}
+[2.316426] (-) TimerEvent: {}
+[2.322762] (Week2_lab) StdoutLine: {'line': b'running develop\n'}
+[2.416687] (-) TimerEvent: {}
+[2.517366] (-) TimerEvent: {}
+[2.617953] (-) TimerEvent: {}
+[2.718387] (-) TimerEvent: {}
+[2.809990] (Week2_lab) StdoutLine: {'line': b'running egg_info\n'}
+[2.810215] (Week2_lab) StdoutLine: {'line': b'creating Week2_lab.egg-info\n'}
+[2.810348] (Week2_lab) StdoutLine: {'line': b'writing Week2_lab.egg-info/PKG-INFO\n'}
+[2.810480] (Week2_lab) StdoutLine: {'line': b'writing dependency_links to Week2_lab.egg-info/dependency_links.txt\n'}
+[2.810612] (Week2_lab) StdoutLine: {'line': b'writing entry points to Week2_lab.egg-info/entry_points.txt\n'}
+[2.810855] (Week2_lab) StdoutLine: {'line': b'writing requirements to Week2_lab.egg-info/requires.txt\n'}
+[2.811455] (Week2_lab) StdoutLine: {'line': b'writing top-level names to Week2_lab.egg-info/top_level.txt\n'}
+[2.812200] (Week2_lab) StdoutLine: {'line': b"writing manifest file 'Week2_lab.egg-info/SOURCES.txt'\n"}
+[2.815342] (Week2_lab) StdoutLine: {'line': b"reading manifest file 'Week2_lab.egg-info/SOURCES.txt'\n"}
+[2.819065] (Week2_lab) StdoutLine: {'line': b"writing manifest file 'Week2_lab.egg-info/SOURCES.txt'\n"}
+[2.819269] (-) TimerEvent: {}
+[2.819315] (Week2_lab) StdoutLine: {'line': b'running build_ext\n'}
+[2.819479] (Week2_lab) StdoutLine: {'line': b'Creating /home/ben/KV6022_limo_ros2/src/install/Week2_lab/lib/python3.10/site-packages/Week2-lab.egg-link (link to .)\n'}
+[2.821320] (Week2_lab) StdoutLine: {'line': b'Installing command_publisher script to /home/ben/KV6022_limo_ros2/src/install/Week2_lab/lib/Week2_lab\n'}
+[2.822721] (Week2_lab) StdoutLine: {'line': b'\n'}
+[2.822896] (Week2_lab) StdoutLine: {'line': b'Installed /home/ben/KV6022_limo_ros2/src/build/Week2_lab\n'}
+[2.823694] (Week2_lab) StdoutLine: {'line': b'running symlink_data\n'}
+[2.825640] (Week2_lab) StdoutLine: {'line': b'creating /home/ben/KV6022_limo_ros2/src/install/Week2_lab/share/ament_index\n'}
+[2.825793] (Week2_lab) StdoutLine: {'line': b'creating /home/ben/KV6022_limo_ros2/src/install/Week2_lab/share/ament_index/resource_index\n'}
+[2.825925] (Week2_lab) StdoutLine: {'line': b'creating /home/ben/KV6022_limo_ros2/src/install/Week2_lab/share/ament_index/resource_index/packages\n'}
+[2.826079] (Week2_lab) StdoutLine: {'line': b'symbolically linking /home/ben/KV6022_limo_ros2/src/build/Week2_lab/resource/Week2_lab -> /home/ben/KV6022_limo_ros2/src/install/Week2_lab/share/ament_index/resource_index/packages\n'}
+[2.826220] (Week2_lab) StdoutLine: {'line': b'symbolically linking /home/ben/KV6022_limo_ros2/src/build/Week2_lab/package.xml -> /home/ben/KV6022_limo_ros2/src/install/Week2_lab/share/Week2_lab\n'}
+[2.858000] (Week2_lab) CommandEnded: {'returncode': 0}
+[2.879456] (Week2_lab) JobEnded: {'identifier': 'Week2_lab', 'rc': 0}
+[2.879993] (-) EventReactorShutdown: {}

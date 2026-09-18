@@ -1,0 +1,3 @@
+[console_scripts]
+trajectory_tracking_controller = trajectory_skeleton.trajectory_tracking_controller:main
+

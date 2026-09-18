@@ -1,0 +1,28 @@
+[3.378s] Invoking command in '/home/ben/KV6022_limo_ros2/build/trajectory_referee': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/ben/KV6022_limo_ros2/build/trajectory_referee/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ben/KV6022_limo_ros2/build/trajectory_referee/build --no-deps symlink_data
+[3.867s] running develop
+[4.254s] running egg_info
+[4.254s] creating trajectory_referee.egg-info
+[4.255s] writing trajectory_referee.egg-info/PKG-INFO
+[4.256s] writing dependency_links to trajectory_referee.egg-info/dependency_links.txt
+[4.257s] writing entry points to trajectory_referee.egg-info/entry_points.txt
+[4.258s] writing requirements to trajectory_referee.egg-info/requires.txt
+[4.258s] writing top-level names to trajectory_referee.egg-info/top_level.txt
+[4.259s] writing manifest file 'trajectory_referee.egg-info/SOURCES.txt'
+[4.264s] reading manifest file 'trajectory_referee.egg-info/SOURCES.txt'
+[4.265s] writing manifest file 'trajectory_referee.egg-info/SOURCES.txt'
+[4.266s] running build_ext
+[4.266s] Creating /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/python3.10/site-packages/trajectory-referee.egg-link (link to .)
+[4.267s] Installing trajectory_publisher script to /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/trajectory_referee
+[4.267s] 
+[4.267s] Installed /home/ben/KV6022_limo_ros2/build/trajectory_referee
+[4.267s] running symlink_data
+[4.267s] creating /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/ament_index
+[4.267s] creating /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/ament_index/resource_index
+[4.267s] creating /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/ament_index/resource_index/packages
+[4.268s] symbolically linking /home/ben/KV6022_limo_ros2/build/trajectory_referee/resource/trajectory_referee -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/ament_index/resource_index/packages
+[4.268s] symbolically linking /home/ben/KV6022_limo_ros2/build/trajectory_referee/package.xml -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/trajectory_referee
+[4.268s] creating /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/trajectory_referee/routes
+[4.268s] symbolically linking /home/ben/KV6022_limo_ros2/build/trajectory_referee/routes/route1.pkl -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/trajectory_referee/routes
+[4.268s] symbolically linking /home/ben/KV6022_limo_ros2/build/trajectory_referee/routes/route2.pkl -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/trajectory_referee/routes
+[4.268s] symbolically linking /home/ben/KV6022_limo_ros2/build/trajectory_referee/routes/route3.pkl -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/trajectory_referee/routes
+[4.317s] Invoked command in '/home/ben/KV6022_limo_ros2/build/trajectory_referee' returned '0': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/ben/KV6022_limo_ros2/build/trajectory_referee/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ben/KV6022_limo_ros2/build/trajectory_referee/build --no-deps symlink_data

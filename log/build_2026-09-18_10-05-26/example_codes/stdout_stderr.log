@@ -1,0 +1,73 @@
+running develop
+Removing /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example-codes.egg-link (link to .)
+running egg_info
+writing ../../build/example_codes/example_codes.egg-info/PKG-INFO
+writing dependency_links to ../../build/example_codes/example_codes.egg-info/dependency_links.txt
+writing entry points to ../../build/example_codes/example_codes.egg-info/entry_points.txt
+writing requirements to ../../build/example_codes/example_codes.egg-info/requires.txt
+writing top-level names to ../../build/example_codes/example_codes.egg-info/top_level.txt
+reading manifest file '../../build/example_codes/example_codes.egg-info/SOURCES.txt'
+writing manifest file '../../build/example_codes/example_codes.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/ben/KV6022_limo_ros2/build/example_codes/build
+creating /home/ben/KV6022_limo_ros2/build/example_codes/build/lib
+creating /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes
+copying example_codes/go_forward_5m.py -> /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes
+copying example_codes/tf_listener.py -> /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes
+copying example_codes/detector_basic.py -> /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes
+copying example_codes/closest_lidar_point_answer.py -> /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes
+copying example_codes/trajectory_tracking_p_controller.py -> /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes
+copying example_codes/object_counter.py -> /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes
+copying example_codes/noisy_odometry.py -> /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes
+copying example_codes/object_localisation.py -> /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes
+copying example_codes/__init__.py -> /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes
+copying example_codes/closest_lidar_point.py -> /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes
+copying example_codes/opencv_intro.py -> /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes
+copying example_codes/opencv_bridge.py -> /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes
+copying example_codes/trajectory_tracking_kinematic_controller.py -> /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes
+copying example_codes/trajectory_tracking_controller_on_off.py -> /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes
+copying example_codes/colour_contours.py -> /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes
+copying example_codes/colour_contours_detector.py -> /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes
+running install
+running install_lib
+creating /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes
+copying /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes/go_forward_5m.py -> /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes
+copying /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes/tf_listener.py -> /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes
+copying /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes/detector_basic.py -> /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes
+copying /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes/closest_lidar_point_answer.py -> /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes
+copying /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes/trajectory_tracking_p_controller.py -> /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes
+copying /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes/object_counter.py -> /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes
+copying /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes/noisy_odometry.py -> /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes
+copying /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes/object_localisation.py -> /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes
+copying /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes/__init__.py -> /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes
+copying /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes/closest_lidar_point.py -> /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes
+copying /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes/opencv_intro.py -> /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes
+copying /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes/opencv_bridge.py -> /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes
+copying /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes/trajectory_tracking_kinematic_controller.py -> /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes
+copying /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes/trajectory_tracking_controller_on_off.py -> /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes
+copying /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes/colour_contours.py -> /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes
+copying /home/ben/KV6022_limo_ros2/build/example_codes/build/lib/example_codes/colour_contours_detector.py -> /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes
+byte-compiling /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes/go_forward_5m.py to go_forward_5m.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes/tf_listener.py to tf_listener.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes/detector_basic.py to detector_basic.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes/closest_lidar_point_answer.py to closest_lidar_point_answer.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes/trajectory_tracking_p_controller.py to trajectory_tracking_p_controller.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes/object_counter.py to object_counter.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes/noisy_odometry.py to noisy_odometry.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes/object_localisation.py to object_localisation.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes/closest_lidar_point.py to closest_lidar_point.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes/opencv_intro.py to opencv_intro.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes/opencv_bridge.py to opencv_bridge.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes/trajectory_tracking_kinematic_controller.py to trajectory_tracking_kinematic_controller.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes/trajectory_tracking_controller_on_off.py to trajectory_tracking_controller_on_off.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes/colour_contours.py to colour_contours.cpython-310.pyc
+byte-compiling /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes/colour_contours_detector.py to colour_contours_detector.cpython-310.pyc
+running install_data
+copying resource/example_codes -> /home/ben/KV6022_limo_ros2/install/example_codes/share/ament_index/resource_index/packages
+copying package.xml -> /home/ben/KV6022_limo_ros2/install/example_codes/share/example_codes
+running install_egg_info
+Copying ../../build/example_codes/example_codes.egg-info to /home/ben/KV6022_limo_ros2/install/example_codes/lib/python3.10/site-packages/example_codes-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/ben/KV6022_limo_ros2/build/example_codes/install.log'

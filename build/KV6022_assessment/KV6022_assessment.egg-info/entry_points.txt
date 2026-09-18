@@ -1,0 +1,6 @@
+[console_scripts]
+example_nav_through_poses = KV6022_assessment.example_nav_through_poses:main
+example_nav_to_pose = KV6022_assessment.example_nav_to_pose:main
+example_opencv_detector = KV6022_assessment.example_opencv_detector:main
+example_waypoint_follower = KV6022_assessment.example_waypoint_follower:main
+

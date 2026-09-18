@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/ben/KV6022_limo_ros2/build/limo_msgs/rosidl_generator_py/limo_msgs/limo_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" "TARGETS" "limo_msgs__rosidl_typesupport_c__pyext" "DESTINATION" "lib/python3.10/site-packages/limo_msgs")

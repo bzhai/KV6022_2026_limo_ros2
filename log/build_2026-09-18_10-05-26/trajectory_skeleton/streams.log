@@ -1,0 +1,38 @@
+[4.281s] Invoking command in '/home/ben/KV6022_limo_ros2/build/trajectory_skeleton': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/ben/KV6022_limo_ros2/build/trajectory_skeleton/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ben/KV6022_limo_ros2/install/trajectory_skeleton/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/ben/KV6022_limo_ros2/build/trajectory_skeleton/build
+[5.185s] running develop
+[5.608s] Removing /home/ben/KV6022_limo_ros2/install/trajectory_skeleton/lib/python3.10/site-packages/trajectory-skeleton.egg-link (link to .)
+[5.654s] Invoked command in '/home/ben/KV6022_limo_ros2/build/trajectory_skeleton' returned '0': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/ben/KV6022_limo_ros2/build/trajectory_skeleton/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ben/KV6022_limo_ros2/install/trajectory_skeleton/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/ben/KV6022_limo_ros2/build/trajectory_skeleton/build
+[5.657s] Invoking command in '/home/ben/KV6022_limo_ros2/src/trajectory_skeleton': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/ben/KV6022_limo_ros2/build/trajectory_skeleton/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ben/KV6022_limo_ros2/install/trajectory_skeleton/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/trajectory_skeleton build --build-base /home/ben/KV6022_limo_ros2/build/trajectory_skeleton/build install --record /home/ben/KV6022_limo_ros2/build/trajectory_skeleton/install.log --install-scripts $base/lib/trajectory_skeleton --single-version-externally-managed install_data --force
+[6.256s] running egg_info
+[6.261s] writing ../../build/trajectory_skeleton/trajectory_skeleton.egg-info/PKG-INFO
+[6.262s] writing dependency_links to ../../build/trajectory_skeleton/trajectory_skeleton.egg-info/dependency_links.txt
+[6.267s] writing entry points to ../../build/trajectory_skeleton/trajectory_skeleton.egg-info/entry_points.txt
+[6.268s] writing requirements to ../../build/trajectory_skeleton/trajectory_skeleton.egg-info/requires.txt
+[6.270s] writing top-level names to ../../build/trajectory_skeleton/trajectory_skeleton.egg-info/top_level.txt
+[6.277s] reading manifest file '../../build/trajectory_skeleton/trajectory_skeleton.egg-info/SOURCES.txt'
+[6.278s] writing manifest file '../../build/trajectory_skeleton/trajectory_skeleton.egg-info/SOURCES.txt'
+[6.278s] running build
+[6.289s] running build_py
+[6.289s] creating /home/ben/KV6022_limo_ros2/build/trajectory_skeleton/build
+[6.290s] creating /home/ben/KV6022_limo_ros2/build/trajectory_skeleton/build/lib
+[6.290s] creating /home/ben/KV6022_limo_ros2/build/trajectory_skeleton/build/lib/trajectory_skeleton
+[6.290s] copying trajectory_skeleton/trajectory_tracking_controller.py -> /home/ben/KV6022_limo_ros2/build/trajectory_skeleton/build/lib/trajectory_skeleton
+[6.295s] copying trajectory_skeleton/__init__.py -> /home/ben/KV6022_limo_ros2/build/trajectory_skeleton/build/lib/trajectory_skeleton
+[6.296s] running install
+[6.296s] running install_lib
+[6.297s] creating /home/ben/KV6022_limo_ros2/install/trajectory_skeleton/lib/python3.10/site-packages/trajectory_skeleton
+[6.297s] copying /home/ben/KV6022_limo_ros2/build/trajectory_skeleton/build/lib/trajectory_skeleton/trajectory_tracking_controller.py -> /home/ben/KV6022_limo_ros2/install/trajectory_skeleton/lib/python3.10/site-packages/trajectory_skeleton
+[6.297s] copying /home/ben/KV6022_limo_ros2/build/trajectory_skeleton/build/lib/trajectory_skeleton/__init__.py -> /home/ben/KV6022_limo_ros2/install/trajectory_skeleton/lib/python3.10/site-packages/trajectory_skeleton
+[6.297s] byte-compiling /home/ben/KV6022_limo_ros2/install/trajectory_skeleton/lib/python3.10/site-packages/trajectory_skeleton/trajectory_tracking_controller.py to trajectory_tracking_controller.cpython-310.pyc
+[6.298s] byte-compiling /home/ben/KV6022_limo_ros2/install/trajectory_skeleton/lib/python3.10/site-packages/trajectory_skeleton/__init__.py to __init__.cpython-310.pyc
+[6.298s] running install_data
+[6.298s] copying resource/trajectory_skeleton -> /home/ben/KV6022_limo_ros2/install/trajectory_skeleton/share/ament_index/resource_index/packages
+[6.304s] copying package.xml -> /home/ben/KV6022_limo_ros2/install/trajectory_skeleton/share/trajectory_skeleton
+[6.304s] copying launch/view_robot.launch.py -> /home/ben/KV6022_limo_ros2/install/trajectory_skeleton/share/trajectory_skeleton/launch
+[6.304s] copying rviz/follow.rviz -> /home/ben/KV6022_limo_ros2/install/trajectory_skeleton/share/trajectory_skeleton/rviz
+[6.308s] running install_egg_info
+[6.309s] Copying ../../build/trajectory_skeleton/trajectory_skeleton.egg-info to /home/ben/KV6022_limo_ros2/install/trajectory_skeleton/lib/python3.10/site-packages/trajectory_skeleton-0.0.0-py3.10.egg-info
+[6.310s] running install_scripts
+[6.341s] Installing trajectory_tracking_controller script to /home/ben/KV6022_limo_ros2/install/trajectory_skeleton/lib/trajectory_skeleton
+[6.341s] writing list of installed files to '/home/ben/KV6022_limo_ros2/build/trajectory_skeleton/install.log'
+[6.420s] Invoked command in '/home/ben/KV6022_limo_ros2/src/trajectory_skeleton' returned '0': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/ben/KV6022_limo_ros2/build/trajectory_skeleton/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ben/KV6022_limo_ros2/install/trajectory_skeleton/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/trajectory_skeleton build --build-base /home/ben/KV6022_limo_ros2/build/trajectory_skeleton/build install --record /home/ben/KV6022_limo_ros2/build/trajectory_skeleton/install.log --install-scripts $base/lib/trajectory_skeleton --single-version-externally-managed install_data --force

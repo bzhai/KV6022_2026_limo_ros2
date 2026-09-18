@@ -1,0 +1,6 @@
+source;share/KV6022_assessment/hook/pythonpath.ps1
+source;share/KV6022_assessment/hook/pythonpath.dsv
+source;share/KV6022_assessment/hook/pythonpath.sh
+source;share/KV6022_assessment/hook/ament_prefix_path.ps1
+source;share/KV6022_assessment/hook/ament_prefix_path.dsv
+source;share/KV6022_assessment/hook/ament_prefix_path.sh

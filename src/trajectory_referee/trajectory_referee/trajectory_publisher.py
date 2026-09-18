@@ -63,7 +63,7 @@ if len(sys.argv)<3:
             e.g.: 
             rosrun trajectory_referee route1 dis''')
 
-if sys.argv[1] not in ["route1","route2","route3"]:
+if sys.argv[1] not in ["route1","route2","route3","route1_fixed"]:
   print ("Please give one of route1, route2, route3 or route4 for first argument.")
   sys.exit(1)
 

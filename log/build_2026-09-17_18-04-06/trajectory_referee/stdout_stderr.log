@@ -1,0 +1,26 @@
+running develop
+running egg_info
+creating trajectory_referee.egg-info
+writing trajectory_referee.egg-info/PKG-INFO
+writing dependency_links to trajectory_referee.egg-info/dependency_links.txt
+writing entry points to trajectory_referee.egg-info/entry_points.txt
+writing requirements to trajectory_referee.egg-info/requires.txt
+writing top-level names to trajectory_referee.egg-info/top_level.txt
+writing manifest file 'trajectory_referee.egg-info/SOURCES.txt'
+reading manifest file 'trajectory_referee.egg-info/SOURCES.txt'
+writing manifest file 'trajectory_referee.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/python3.10/site-packages/trajectory-referee.egg-link (link to .)
+Installing trajectory_publisher script to /home/ben/KV6022_limo_ros2/install/trajectory_referee/lib/trajectory_referee
+
+Installed /home/ben/KV6022_limo_ros2/build/trajectory_referee
+running symlink_data
+creating /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/ament_index
+creating /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/ament_index/resource_index
+creating /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/ament_index/resource_index/packages
+symbolically linking /home/ben/KV6022_limo_ros2/build/trajectory_referee/resource/trajectory_referee -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/ament_index/resource_index/packages
+symbolically linking /home/ben/KV6022_limo_ros2/build/trajectory_referee/package.xml -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/trajectory_referee
+creating /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/trajectory_referee/routes
+symbolically linking /home/ben/KV6022_limo_ros2/build/trajectory_referee/routes/route1.pkl -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/trajectory_referee/routes
+symbolically linking /home/ben/KV6022_limo_ros2/build/trajectory_referee/routes/route2.pkl -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/trajectory_referee/routes
+symbolically linking /home/ben/KV6022_limo_ros2/build/trajectory_referee/routes/route3.pkl -> /home/ben/KV6022_limo_ros2/install/trajectory_referee/share/trajectory_referee/routes
