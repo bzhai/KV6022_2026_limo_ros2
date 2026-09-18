@@ -1,51 +1,31 @@
 #!/usr/bin/env python3
 """
-KV6022 - Trajectory Tracking Controller  [STUDENT SKELETON - HIGH SCAFFOLDING]
+KV6022 - Trajectory Tracking Controller  [INSTRUCTOR SOLUTION]
 
 =============================================================================
-  THIS FILE RUNS AS-IS. The robot will not move.
-
-  Every control structure is already written for you: all the if/elif
-  branches, all the return statements, all the state strings. You do not
-  need to design any logic.
-
-  Your job is to fill in 21 numbered BLANKS, each of which is a single
-  expression on a single line. Every blank has:
-     - a FILL-IN TABLE entry in the docstring above it, in plain English
-     - the variable names you need, listed
-     - the equation it comes from
+  COMPLETE REFERENCE SOLUTION. Do not distribute to students.
+  Generated from the student skeleton, so docstrings, hints and task
+  numbering are identical - only the five TODO blocks are filled in.
 =============================================================================
 
-Read CONTROLLER_WORKSHEET.md alongside this file for the derivations.
+Read CONTROLLER_WORKSHEET.md alongside this file. It contains the derivations,
+the staged tasks, and three tiers of hints per task.
 
-TASK MAP  (all tasks HIGH scaffolding)
---------------------------------------
-  TASK 0   normalize_angle()          2 blanks   (0a - 0b)
-  TASK 1   compute_errors()           5 blanks   (1a - 1e)
-  TASK 2   control_on_off()           6 blanks   (2a - 2f)
-  TASK 3   control_proportional()     4 blanks   (3a - 3d)
-  TASK 4   control_kinematic()        4 blanks   (4a - 4d)
+TASK MAP
+--------
+  TASK 0   normalize_angle()          ~1 line     scaffolding: HIGH
+  TASK 1   compute_errors()           ~6 lines    scaffolding: HIGH
+  TASK 2   control_on_off()           ~8 lines    scaffolding: MEDIUM
+  TASK 3   control_proportional()     ~8 lines    scaffolding: LOW
+  TASK 4   control_kinematic()        ~8 lines    scaffolding: MINIMAL
 
-Do them in order - later tasks use earlier ones. Check your work at any
-point, without the simulator, with:
+Do them in order. Each task depends on the ones before it, and TASKs 0-1 can
+be verified without the simulator:
 
     python3 check_my_math.py
 
-HOW TO FILL A BLANK
--------------------
-Each blank looks like this:
-
-    rho = 0.0          # BLANK 1a  <-- replace the 0.0
-
-Replace only the value. Leave the variable name and the comment. So
-
-    rho = 0.0          # BLANK 1a
-becomes
-    rho = math.hypot(dx, dy)          # BLANK 1a
-
-Everything outside the BLANK lines is complete and correct. If you find
-yourself wanting to add an if statement, re-read the structure - it is
-already there.
+Everything outside the TODO blocks (ROS plumbing, TF lookup, parameters,
+saturation, logging) is already complete. You should not need to edit it.
 """
 
 import math
@@ -63,7 +43,7 @@ from tf2_ros import (
 
 
 # =============================================================================
-#  TASK 0 - Angle wrapping                                   2 blanks (0a-0b)
+#  TASK 0 - Angle wrapping                                  [HIGH scaffolding]
 # =============================================================================
 def normalize_angle(angle):
     r"""Wrap an angle into the interval [-pi, +pi].
@@ -81,40 +61,31 @@ def normalize_angle(angle):
     when the true error is 0 deg. Feed that into a proportional controller and
     it commands a violent spin to correct an error that does not exist.
 
-    THE METHOD
-    ----------
-    We want to map any real angle to the equivalent angle in [-pi, pi]. The
-    trick is that sin and cos are periodic, so they *discard* whole
-    revolutions for us - sin(phi) and cos(phi) are unchanged by adding
-    2*pi*k to phi. Then atan2 rebuilds an angle from those two components,
-    and atan2 always returns a value in [-pi, pi]. So:
+    We need a function that maps any real angle to the equivalent angle in
+    [-pi, pi]. The trick is that sin and cos are already periodic, so they
+    discard the excess revolutions for us:
 
         wrap(phi) = atan2( sin(phi), cos(phi) )
 
-    Careful: atan2 takes the VERTICAL component first. atan2(y, x), not
-    atan2(x, y). The sine is the vertical one.
+    Both sin(phi) and cos(phi) are unchanged by adding 2*pi*k to phi, and
+    atan2 always returns a value in [-pi, pi]. So the composition throws away
+    whole revolutions and keeps the part we care about.
 
-    WORKED SANITY CHECK
-    -------------------
-    wrap(4*pi)     = 0        two full revolutions is no rotation at all
-    wrap(3*pi)     = +pi      3*pi = 2*pi + pi, so one full turn is discarded
-                              and a HALF turn remains. Not zero.
-    wrap(-3*pi/2)  = +pi/2    270 deg one way is 90 deg the other way
-    wrap(0.7)      = 0.7      small angles pass through untouched
-
-    FILL-IN TABLE
+    TODO (TASK 0)
     -------------
-      BLANK 0a   sin_part   the sine of `angle`                 use math.sin
-      BLANK 0b   cos_part   the cosine of `angle`               use math.cos
+    Replace the line below with the one-line implementation.
+    Requirements: normalize_angle(4*pi) must return approximately 0.0, and
+    normalize_angle(-3*pi/2) must return approximately +pi/2. Note that
+    normalize_angle(3*pi) is +pi (or equivalently -pi), not 0 - three
+    half-turns is a full turn plus a half-turn, and only the full turn is
+    discarded.
 
-    (The atan2 call is already written for you on the return line, so you
-    cannot get the argument order wrong. Note which of the two variables it
-    passes first, and why.)
+    HINT 1: You need exactly one call to math.atan2, with two arguments.
+    HINT 2: math.atan2(y, x) takes the *vertical* component first.
     """
-    sin_part = 0.0          # BLANK 0a
-    cos_part = 1.0          # BLANK 0b
-
-    return math.atan2(sin_part, cos_part)
+    # --- SOLUTION (TASK 0) --------------------------------------------------
+    return math.atan2(math.sin(angle), math.cos(angle))
+    # ------------------------------------------------------------------------
 
 
 def clamp(value, limit):
@@ -191,8 +162,7 @@ class TrajectoryTrackingController(Node):
             3. DECIDE     turn error terms into (v, omega)     <- TASKs 2,3,4
             4. ACT        saturate and publish to /cmd_vel
 
-        You are filling in the expressions inside steps 2 and 3. Steps 1 and 4
-        are done.
+        You are implementing steps 2 and 3. Steps 1 and 4 are done.
         """
         self._read_params()
 
@@ -256,7 +226,7 @@ class TrajectoryTrackingController(Node):
             self._last_state = state
 
     # =================================================================
-    #  TASK 1 - The error terms                        5 blanks (1a-1e)
+    #  TASK 1 - The error terms                       [HIGH scaffolding]
     # =================================================================
     @staticmethod
     def compute_errors(x, y, theta, wx, wy, wtheta, match_orientation):
@@ -264,7 +234,7 @@ class TrajectoryTrackingController(Node):
 
         This is the conceptual heart of the whole workshop. All three
         controllers consume these four numbers and nothing else. Get this
-        right and the controllers are a handful of lines each; get it wrong
+        right and the controllers are three or four lines each; get it wrong
         and no amount of gain tuning will save you.
 
         THE IDEA
@@ -279,92 +249,72 @@ class TrajectoryTrackingController(Node):
 
         THE FOUR TERMS
         --------------
-        The Cartesian offset to the goal is computed for you below:
+        Let the Cartesian offset to the goal be
 
-            dx = wx - x        dy = wy - y
+            \Delta x = wx - x,        \Delta y = wy - y
 
-        1. rho - distance remaining, always >= 0:
+        1. rho  -  distance remaining, always >= 0:
 
-               \rho = \sqrt{dx^2 + dy^2}
+               \rho = \sqrt{\Delta x^2 + \Delta y^2}
 
-           Drives the *linear* velocity. rho = 0 means arrived.
+           Drives the *linear* velocity. When rho = 0 we have arrived.
 
-        2. alpha - bearing of the goal in the robot's own frame. Build it in
-           two steps. First the absolute compass bearing from robot to goal:
+        2. alpha  -  bearing of the goal in the robot's own frame:
 
-               \text{bearing} = \mathrm{atan2}(dy, dx)
+               \alpha = \mathrm{wrap}\big(\mathrm{atan2}(\Delta y, \Delta x) - \theta\big)
 
-           then rotate it into the robot's frame by subtracting the robot's
-           own heading, and wrap:
-
-               \alpha = \mathrm{wrap}(\text{bearing} - \theta)
-
-           So:
+           atan2(dy, dx) is the absolute compass direction from robot to goal.
+           Subtracting theta rotates that into the robot's frame, so:
                alpha =  0      goal is dead ahead
-               alpha = +pi/2   goal is directly to the LEFT
-               alpha = -pi/2   goal is directly to the RIGHT
-               alpha = +/-pi   goal is directly BEHIND
+               alpha = +pi/2   goal is directly to the left
+               alpha = +/-pi   goal is directly behind
            Drives the *angular* velocity. Note alpha says nothing about which
            way the robot will be facing when it arrives.
 
-        3. theta_err - mismatch between current heading and the goal's
+        3. theta_err  -  mismatch between current heading and the goal's
            required final orientation:
 
                \theta_e = \mathrm{wrap}(w\theta - \theta)
 
-           Only graded in `dor` mode, and only useful once rho is small. This
-           is what you null while spinning on the spot at the end.
+           Only meaningful in `dor` mode, and only once rho is small. This is
+           what you null while spinning on the spot at the end.
 
-        4. beta - mismatch between the goal orientation and the direction from
-           which you are approaching:
+        4. beta  -  mismatch between the goal orientation and the direction
+           from which you are approaching:
 
-               \beta = \mathrm{wrap}(\theta_e - \alpha)
+               \beta = \mathrm{wrap}(w\theta - \theta - \alpha)
+                     = \mathrm{wrap}(\theta_e - \alpha)
 
-           Read it this way: alpha tells you where the goal *is*, beta tells
-           you how *wrongly angled* your approach is. If beta = 0 you are
-           travelling straight down the goal's own heading and will arrive
-           already correctly oriented. If beta is large you are approaching
-           side-on and will need to curve. Only TASK 4 uses beta.
+           Harder to picture than the others, so read it this way: alpha tells
+           you where the goal *is*, beta tells you how *wrongly angled* your
+           approach is. If beta = 0 you are travelling straight down the
+           goal's own heading and will arrive already correctly oriented. If
+           beta is large you are approaching side-on and will need to curve.
+           Only the kinematic controller uses beta.
 
-        THE TWO RULES
+           In `dis` mode the goal orientation is not graded, so beta carries no
+           useful information and we set it to 0.0. This is why the kinematic
+           controller degenerates gracefully into a P controller in `dis` mode.
+
+        TODO (TASK 1)
         -------------
+        Replace the four stubs below. Two rules, and nearly every bug in this
+        workshop is a violation of one of them:
+
           RULE A: rho is a length. Never wrap it. Never let it go negative.
-          RULE B: every angular term passes through normalize_angle().
-                  EVERY one - including beta, even though theta_err and alpha
-                  were each already wrapped. Wrapping does not survive
-                  subtraction: two wrapped angles can differ by more than pi.
+          RULE B: every angular term must pass through normalize_angle().
+                  Every one. Including beta, even though it is built from two
+                  quantities that were each already wrapped - wrapping is not
+                  preserved by subtraction.
 
-        Nearly every bug in this workshop breaks one of those two rules.
-
-        FILL-IN TABLE
-        -------------
-          BLANK 1a   rho         distance from (x,y) to (wx,wy)
-                                 available: dx, dy      use: math.hypot
-                                 do NOT wrap this one (RULE A)
-
-          BLANK 1b   bearing     absolute compass bearing robot -> goal
-                                 available: dx, dy      use: math.atan2
-                                 remember atan2 takes the vertical first
-
-          BLANK 1c   alpha       bearing rotated into the robot frame
-                                 available: bearing, theta
-                                 = wrap(bearing - theta)
-                                 use: normalize_angle
-
-          BLANK 1d   theta_err   goal heading minus robot heading, wrapped
-                                 available: wtheta, theta
-                                 use: normalize_angle
-
-          BLANK 1e   beta        approach-angle error, wrapped
-                                 available: theta_err, alpha
-                                 = wrap(theta_err - alpha)
-                                 use: normalize_angle
-
-        The `if match_orientation` branch is already written. The `else` side
-        is already correct: in `dis` mode the goal orientation is not graded,
-        so beta must be exactly 0.0 and carry no information. This is why the
-        kinematic controller degenerates gracefully into a P controller in
-        `dis` mode.
+        HINT 1: math.hypot(dx, dy) computes sqrt(dx*dx + dy*dy) and is more
+                numerically robust than writing it out.
+        HINT 2: For alpha, work out the absolute bearing first, then subtract
+                the robot's heading, then wrap the result. Three steps, one
+                line.
+        HINT 3: beta can be written from theta_err and alpha in one short
+                expression - look at the second form given above. Remember to
+                wrap it, and remember the match_orientation switch.
 
         Returns:
             (rho, alpha, beta, theta_err)
@@ -372,20 +322,21 @@ class TrajectoryTrackingController(Node):
         dx = wx - x
         dy = wy - y
 
-        rho = 0.0                # BLANK 1a
-        bearing = 0.0            # BLANK 1b
-        alpha = 0.0              # BLANK 1c
-        theta_err = 0.0          # BLANK 1d
+        # --- SOLUTION (TASK 1) -------------------------------------------
+        rho = math.hypot(dx, dy)
+        alpha = normalize_angle(math.atan2(dy, dx) - theta)
+        theta_err = normalize_angle(wtheta - theta)
 
         if match_orientation:
-            beta = 0.0           # BLANK 1e
+            beta = normalize_angle(theta_err - alpha)
         else:
-            beta = 0.0           # already correct - do not change
+            beta = 0.0
+        # -----------------------------------------------------------------
 
         return rho, alpha, beta, theta_err
 
     # =================================================================
-    #  TASK 2 - On/Off controller                      6 blanks (2a-2f)
+    #  TASK 2 - On/Off controller                   [MEDIUM scaffolding]
     # =================================================================
     def control_on_off(self, rho, alpha, theta_err):
         r"""Bang-bang control: every output is either zero or a fixed magnitude.
@@ -414,67 +365,54 @@ class TrajectoryTrackingController(Node):
         where \(v_0\) = `self.v_on`, \(\omega_0\) = `self.w_on`,
         \(\epsilon_d\) = `self.dist_tol`, \(\epsilon_a\) = `self.onoff_align_tol`.
 
-        The sgn term sets only the *direction* of the turn; the magnitude is
-        always the same. That is what "on/off" means. In Python,
-        `math.copysign(magnitude, error)` gives you
-        magnitude * sgn(error) in a single call - use it rather than writing
-        an if/else on the sign.
+        The sgn term only sets the *direction* of the turn; the magnitude is
+        always the same. That is what "on/off" means.
 
-        THE FOUR CASES ARE ALREADY WRITTEN as branches below, in the same
-        order as the equation above. You only supply the two numbers in each.
-
-        FILL-IN TABLE
-        -------------
-          case 1: too far away AND badly aimed -> turn on the spot
-            BLANK 2a   v   zero - no forward motion until aligned
-            BLANK 2b   w   fixed magnitude self.w_on, signed by alpha
-                           use: math.copysign(self.w_on, alpha)
-
-          case 2: too far away but aimed well enough -> drive straight
-            BLANK 2c   v   the fixed forward speed self.v_on
-            BLANK 2d   w   zero - no steering correction while driving
-
-          case 3: arrived, but heading wrong, and we are in 'dor' mode
-            BLANK 2e   v   zero - spin on the spot, do not translate
-            BLANK 2f   w   fixed magnitude self.w_on, signed by theta_err
-
-          case 4: arrived and satisfied -> already written, returns 0, 0
-
-        Note that case 3 is already guarded by `self.match_orientation`.
-        Without that guard the robot would reach a waypoint in `dis` mode and
-        sit there spinning forever, trying to null an orientation error the
-        referee is not even grading.
-
-        WHAT YOU SHOULD OBSERVE (predict before you run it)
-        ---------------------------------------------------
+        WHAT YOU SHOULD OBSERVE
+        -----------------------
         Because the command does not shrink as the error shrinks, the robot
         arrives at the tolerance boundary still travelling at full speed v_0.
-        It overshoots, the error flips sign, and it corrects at full speed the
-        other way. Expect a limit cycle - permanent oscillation. Shrinking
-        dist_tol makes this WORSE, not better. Work out why before you test:
-        at 20 Hz and v_0 = 0.15 m/s, how far does the robot move between two
-        consecutive decisions? Compare that with dist_tol.
+        It therefore overshoots, the error flips sign, and it corrects at full
+        speed in the other direction. Expect limit-cycle behaviour: a
+        permanent oscillation whose amplitude is set by v_0, by the tolerance
+        band, and by the loop rate. Shrinking dist_tol makes this *worse*, not
+        better. Predict why before you test it - that prediction is the point
+        of this exercise.
+
+        TODO (TASK 2)
+        -------------
+        Implement the four cases above. Return a 3-tuple (v, w, state) where
+        state is one of the strings 'turn', 'drive', 'spin', 'stop' - it drives
+        the debug log, so use exactly those spellings.
+
+        HINT 1: The structure is a chain of if / elif / else on rho and the
+                absolute values of the angles. Handle "not yet arrived"
+                (rho > dist_tol) first, and within that branch decide whether
+                you are pointing the right way.
+        HINT 2: math.copysign(magnitude, error) gives you
+                magnitude * sgn(error) in one call. Use it rather than writing
+                an if/else on the sign.
+        HINT 3: Guard the third case with `self.match_orientation`, or your
+                robot will refuse to leave each waypoint in `dis` mode - it
+                will sit there trying to null an orientation error that the
+                referee is not even grading.
         """
+        # --- SOLUTION (TASK 2) -------------------------------------------
         if rho > self.dist_tol:
-
             if abs(alpha) > self.onoff_align_tol:
-                v = 0.0          # BLANK 2a
-                w = 0.0          # BLANK 2b
-                return v, w, 'turn'
-
-            v = 0.0              # BLANK 2c
-            w = 0.0              # BLANK 2d
-            return v, w, 'drive'
+                # Badly aimed: rotate only, direction from the sign of alpha.
+                return 0.0, math.copysign(self.w_on, alpha), 'turn'
+            # Aimed well enough: constant speed ahead, no steering correction.
+            return self.v_on, 0.0, 'drive'
 
         if self.match_orientation and abs(theta_err) > self.ang_tol:
-            v = 0.0              # BLANK 2e
-            w = 0.0              # BLANK 2f
-            return v, w, 'spin'
+            return 0.0, math.copysign(self.w_on, theta_err), 'spin'
 
         return 0.0, 0.0, 'stop'
+        # -----------------------------------------------------------------
 
     # =================================================================
-    #  TASK 3 - Proportional controller                4 blanks (3a-3d)
+    #  TASK 3 - Proportional controller                [LOW scaffolding]
     # =================================================================
     def control_proportional(self, rho, alpha, theta_err):
         r"""Commands proportional to the errors that produce them.
@@ -489,10 +427,6 @@ class TrajectoryTrackingController(Node):
 
         Gains: `self.kp_lin`, `self.kp_ang`.
 
-        The command now shrinks as the error shrinks, which is exactly the
-        cure for the TASK 2 limit cycle: v -> 0 as rho -> 0, so the robot
-        eases into the waypoint instead of charging the boundary.
-
         WHY THE \(\cos\alpha\) FACTOR
         -----------------------------
         The bare law \(v = K_p \rho\) has a defect: it commands full forward
@@ -503,68 +437,55 @@ class TrajectoryTrackingController(Node):
         bow and goes *negative* (reverse) when the goal is behind.
 
         There is a formal reason to like this factor. Take the candidate
-        Lyapunov function \(V = \tfrac{1}{2}\rho^2 \ge 0\), a scalar "energy"
-        that is zero only at the goal. For a differential-drive robot
-        \(\dot\rho = -v\cos\alpha\), so substituting the control law:
+        Lyapunov function \(V = \tfrac{1}{2}\rho^2 \ge 0\). For a
+        differential-drive robot \(\dot\rho = -v\cos\alpha\), so substituting
+        the control law gives
 
         \[
             \dot V = \rho \dot\rho = -K_p^{lin} \rho^2 \cos^2\alpha \le 0 .
         \]
 
-        \(V\) can never increase, for *any* value of alpha - the robot can
-        never be driven further from the goal than it started. The bare law
-        gives you no such guarantee. Reproduce this derivation in your report.
+        \(V\) can never increase, so the distance to the goal is
+        non-increasing for *any* alpha - the robot can never be driven further
+        away. That is a stability guarantee the bare law does not give you.
 
-        FILL-IN TABLE
+        You will still want a "turn on the spot first" branch when
+        \(|\alpha|\) exceeds `self.p_turn_first`: cos(alpha) makes large-alpha
+        motion harmless, but not efficient.
+
+        TODO (TASK 3)
         -------------
-          BLANK 3a   w    the angular command, used by every branch below
-                          = self.kp_ang * alpha
-                          Computed once before the branching, because the
-                          same expression applies whether or not the robot
-                          is also moving forward.
+        Implement the law. Same 3-tuple return contract as TASK 2, same four
+        states.
 
-          BLANK 3b   v    zero. This is the "turn on the spot first" branch,
-                          taken when |alpha| exceeds self.p_turn_first. The
-                          cosine factor already makes large-alpha motion
-                          harmless, but not efficient - so we suppress v.
-
-          BLANK 3c   v    the full law: self.kp_lin * rho * cos(alpha)
-                          use: math.cos
-
-          BLANK 3d   w    the final spin-in-place command. Apply the angular
-                          gain to theta_err, NOT to alpha:
-                          = self.kp_ang * theta_err
-                          Why not alpha? When rho is tiny, alpha is atan2 of
-                          two nearly-zero numbers and is therefore pure
-                          numerical noise. Never steer on it at close range.
-
-        PREDICT BEFORE YOU RUN
-        ----------------------
-        1. Compared with TASK 2, what happens in the last 20 cm?
-        2. You raise kp_ang from 1.5 to 5.0. What is the failure mode?
-        3. In `dor` mode this controller reaches the right position but not
-           generally the right heading. Which error term is missing from the
-           law above? (That absence is the entire motivation for TASK 4.)
+        HINT 1: Reuse the case structure you built in TASK 2 - not yet
+                arrived / arrived but mis-oriented / done. Only the
+                *expressions* inside each branch change.
+        HINT 2: omega can be computed once before the branching, since the
+                same expression applies whether or not you are also moving
+                forward.
+        HINT 3: For the final spin-in-place case, apply the angular gain to
+                theta_err instead of alpha. When rho is tiny, alpha is
+                atan2 of two nearly-zero numbers and is therefore numerical
+                noise - do not steer with it.
         """
-        w = 0.0                  # BLANK 3a
-
+        # --- SOLUTION (TASK 3) -------------------------------------------
         if rho > self.dist_tol:
+            w = self.kp_ang * alpha
 
             if abs(alpha) > self.p_turn_first:
-                v = 0.0          # BLANK 3b
-                return v, w, 'turn'
+                return 0.0, w, 'turn'
 
-            v = 0.0              # BLANK 3c
-            return v, w, 'drive'
+            return self.kp_lin * rho * math.cos(alpha), w, 'drive'
 
         if self.match_orientation and abs(theta_err) > self.ang_tol:
-            w = 0.0              # BLANK 3d
-            return 0.0, w, 'spin'
+            return 0.0, self.kp_ang * theta_err, 'spin'
 
         return 0.0, 0.0, 'stop'
+        # -----------------------------------------------------------------
 
     # =================================================================
-    #  TASK 4 - Kinematic position controller          4 blanks (4a-4d)
+    #  TASK 4 - Kinematic position controller      [MINIMAL scaffolding]
     # =================================================================
     def control_kinematic(self, rho, alpha, beta, theta_err):
         r"""Full differential-drive position controller.
@@ -585,8 +506,8 @@ class TrajectoryTrackingController(Node):
         goal's own heading. The result is a single smooth curve into the
         waypoint rather than the drive-then-pirouette of TASKs 2 and 3.
 
-        THE ERROR DYNAMICS
-        ------------------
+        STABILITY (worth understanding before you tune)
+        -----------------------------------------------
         In polar error coordinates the plant is
 
         \[
@@ -595,14 +516,6 @@ class TrajectoryTrackingController(Node):
             \dot\beta = -\frac{v \sin\alpha}{\rho}.
         \]
 
-        Look hard at the \(\dot\alpha\) equation: there is a \(\rho\) in a
-        denominator. That is a SINGULARITY. As rho -> 0 the term blows up, and
-        alpha itself becomes atan2 of two nearly-zero numbers - noise. This is
-        why the structure below stops using alpha once rho is inside
-        dist_tol, and switches to theta_err instead.
-
-        STABILITY
-        ---------
         Substituting the control law and linearising about the origin
         (\(\cos\alpha \approx 1\), \(\sin\alpha \approx \alpha\)) gives
 
@@ -619,71 +532,61 @@ class TrajectoryTrackingController(Node):
               - K_\rho K_\beta\big) = 0 .
         \]
 
-        Applying Routh-Hurwitz to that polynomial (the quadratic factor
-        \(\lambda^2 + b\lambda + c\) needs \(b>0\) and \(c>0\); the linear
-        factor needs \(K_\rho>0\)) yields three inequalities:
+        Applying the Routh-Hurwitz conditions to that polynomial yields three
+        inequalities your gains must satisfy:
 
         \[
             K_\rho > 0, \qquad K_\beta < 0, \qquad K_\alpha - K_\rho > 0 .
         \]
 
-        Break the third and the robot spirals instead of converging. Break the
-        second and it arrives in the right place persistently facing the wrong
-        way. These are not rules of thumb - they fall straight out of the
-        polynomial, and you should reproduce the derivation in your report
-        rather than quoting the result.
+        Violate the third and the robot spirals instead of converging.
+        Violate the second and it arrives at the right place facing the wrong
+        way, persistently. These are not arbitrary rules of thumb - they fall
+        straight out of the polynomial above, and you can cite the derivation
+        in your report.
 
         Suggested starting point: \(K_\rho = 0.5\), \(K_\alpha = 1.5\),
-        \(K_\beta = -0.6\). Check it satisfies all three before running.
+        \(K_\beta = -0.6\). Verify it satisfies all three inequalities.
 
-        FILL-IN TABLE
+        TODO (TASK 4)
         -------------
-          BLANK 4a   w    the two-term angular law, used by both of the
-                          not-yet-arrived branches:
-                          = self.k_alpha * alpha + self.k_beta * beta
+        Implement it. You have seen the pattern twice; this time work out the
+        case structure yourself.
 
-          BLANK 4b   v    zero. This branch is taken when |alpha| > pi/2,
-                          i.e. the waypoint is BEHIND the robot. There
-                          v = k_rho * rho would still be positive, so the
-                          robot would drive forward while turning hard and
-                          sweep a wide arc away from the goal. Suppress v and
-                          let omega swing the nose round first.
-
-          BLANK 4c   v    the linear law: self.k_rho * rho
-                          Note: no cosine factor here, unlike TASK 3. Applying
-                          one instead of the |alpha| > pi/2 branch is a
-                          defensible alternative design - implementing both and
-                          comparing them is good report material.
-
-          BLANK 4d   w    the final spin-in-place command, driven by
-                          theta_err and not by alpha (see the singularity
-                          note above):
-                          = self.k_alpha * theta_err
-
-        A NOTE ON TESTING THIS ONE
-        --------------------------
-        In `dis` mode beta is 0.0, so omega collapses to k_alpha * alpha and
-        this controller behaves just like TASK 3. If your `dis` runs look
-        identical to your TASK 3 runs, that is EXPECTED AND CORRECT - it is
-        evidence your TASK 1 is right, not a bug. Test this controller in
-        `dor` mode, where beta actually carries information.
+        HINT 1: The law as written has a singularity you must handle. Look at
+                \(\dot\alpha\) above and ask what happens to the alpha term as
+                rho approaches zero. Then ask what your code should do once
+                rho is inside dist_tol.
+        HINT 2: If \(|\alpha| > \pi/2\) the waypoint is behind the robot and
+                \(v = K_\rho \rho\) is positive, so it drives forward while
+                turning hard - a wide arc away from the goal. Consider
+                suppressing v in that case and letting omega do the work
+                first. (The cos(alpha) trick from TASK 3 is an alternative
+                answer; either is defensible, and comparing them is a good
+                thing to write up.)
+        HINT 3: In `dis` mode beta is 0.0, so omega collapses to
+                \(K_\alpha \alpha\). If your `dis` runs behave exactly like
+                your TASK 3 runs, that is expected and correct - it is
+                evidence your TASK 1 is right, not a bug.
         """
-        w = 0.0                  # BLANK 4a
-
+        # --- SOLUTION (TASK 4) -------------------------------------------
         if rho > self.dist_tol:
+            v = self.k_rho * rho
+            w = self.k_alpha * alpha + self.k_beta * beta
 
+            # Waypoint behind the robot: suppress v so omega can swing the
+            # nose round first, instead of sweeping a wide arc away.
             if abs(alpha) > math.pi / 2.0:
-                v = 0.0          # BLANK 4b
-                return v, w, 'turn'
+                return 0.0, w, 'turn'
 
-            v = 0.0              # BLANK 4c
             return v, w, 'drive'
 
+        # Inside dist_tol alpha is numerical noise, so steer on theta_err.
         if self.match_orientation and abs(theta_err) > self.ang_tol:
-            w = 0.0              # BLANK 4d
-            return 0.0, w, 'spin'
+            return 0.0, self.k_alpha * theta_err, 'spin'
 
         return 0.0, 0.0, 'stop'
+        # -----------------------------------------------------------------
 
     # ------------------------------------------------------------------
     #  Helpers (all provided)

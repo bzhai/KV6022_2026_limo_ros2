@@ -15,4 +15,7 @@ test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py
 trajectory_skeleton/__init__.py
+trajectory_skeleton/check_my_math.py
 trajectory_skeleton/trajectory_tracking_controller.py
+trajectory_skeleton/trajectory_tracking_controller_FADED.py
+trajectory_skeleton/trajectory_tracking_controller_SOLUTION.py
