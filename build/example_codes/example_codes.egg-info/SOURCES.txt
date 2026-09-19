@@ -24,7 +24,11 @@ example_codes/tf_listener.py
 example_codes/trajectory_tracking_controller_on_off.py
 example_codes/trajectory_tracking_kinematic_controller.py
 example_codes/trajectory_tracking_p_controller.py
+example_codes.egg-info/PKG-INFO
+example_codes.egg-info/SOURCES.txt
+example_codes.egg-info/dependency_links.txt
+example_codes.egg-info/entry_points.txt
+example_codes.egg-info/requires.txt
+example_codes.egg-info/top_level.txt
+example_codes.egg-info/zip-safe
 resource/example_codes
-test/test_copyright.py
-test/test_flake8.py
-test/test_pep257.py

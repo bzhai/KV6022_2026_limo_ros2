@@ -1,0 +1,1 @@
+/home/ben/KV6022_limo_ros2/build/yolo_msgs/rosidl_generator_rs/yolo_msgs/rust/src/lib.rs

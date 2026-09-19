@@ -1,0 +1,1 @@
+/home/ben/KV6022_limo_ros2/build/yolo_msgs/rosidl_generator_c/yolo_msgs/msg/detail/point2_d__type_support.h

@@ -54,7 +54,7 @@ endif()
 add_library(limo_msgs::limo_msgs__rosidl_generator_py SHARED IMPORTED)
 
 set_target_properties(limo_msgs::limo_msgs__rosidl_generator_py PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/home/ben/miniconda3/envs/ros2/lib/python3.10/site-packages/numpy/_core/include"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/ben/miniconda3/envs/ros2/lib/python3.10/site-packages/numpy/core/include"
   INTERFACE_LINK_LIBRARIES "limo_msgs::limo_msgs__rosidl_generator_c;/home/ben/miniconda3/envs/ros2/lib/libpython3.10.so;limo_msgs::limo_msgs__rosidl_typesupport_c;builtin_interfaces::builtin_interfaces__rosidl_generator_py;std_msgs::std_msgs__rosidl_generator_py"
 )
 

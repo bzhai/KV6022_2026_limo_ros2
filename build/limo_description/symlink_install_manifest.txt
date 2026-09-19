@@ -23,6 +23,7 @@
 /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_ackerman/limo_ackerman.gazebo
 /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_ackerman/limo_ackerman.xacro
 /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_diff/limo_diff.gazebo
+/home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_diff/limo_diff.gazebo.bak
 /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_diff/limo_diff.xacro
 /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_gazebo.xacro
 /home/ben/KV6022_limo_ros2/install/limo_description/share/limo_description/urdf/limo_mecanum/backup previous/limo_gazebo.gazebo
