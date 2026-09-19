@@ -26,7 +26,8 @@ setup(
         'console_scripts': [
             'closest_scan_marker_node = Week4_lab.closest_scan_marker_ANSWER:main',
             'safe_stop_node = Week4_lab.safe_stop_SOLUTION:main',
-            'reactive_avoid_node = Week4_lab.reactive_avoid_SOLUTION:main',
+            'reactive_avoid_node = Week4_lab.reactive_avoid_SOLUTION:main', # for the reactive avoidance task
+
         ],
     },
 )
