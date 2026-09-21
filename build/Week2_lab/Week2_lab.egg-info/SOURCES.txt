@@ -10,11 +10,7 @@ setup.py
 ../../build/Week2_lab/Week2_lab.egg-info/zip-safe
 Week2_lab/__init__.py
 Week2_lab/command_publisher.py
-Week2_lab.egg-info/PKG-INFO
-Week2_lab.egg-info/SOURCES.txt
-Week2_lab.egg-info/dependency_links.txt
-Week2_lab.egg-info/entry_points.txt
-Week2_lab.egg-info/requires.txt
-Week2_lab.egg-info/top_level.txt
-Week2_lab.egg-info/zip-safe
 resource/Week2_lab
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

@@ -1,1 +1,4 @@
-/home/ben/KV6022_limo_ros2/src/yolo_ros/yolo_msgs/msg/Point2D.msg
+# 2D point in pixel coordinates
+
+float64 x
+float64 y

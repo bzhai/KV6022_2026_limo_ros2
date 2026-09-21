@@ -1,1 +1,13 @@
-/home/ben/KV6022_limo_ros2/src/limo_gazebosim/models/simulation_table/materials/scripts/simulation_table.material
+material SimulationTable/Background 
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture background.png
+            }
+        }
+    }
+}

@@ -198,17 +198,17 @@ limo_gazebosim_uninstall/fast:
 .PHONY : limo_gazebosim_uninstall/fast
 
 #=============================================================================
-# Target rules for targets named ament_cmake_python_symlink_limo_gazebosim
+# Target rules for targets named ament_cmake_python_copy_limo_gazebosim
 
 # Build rule for target.
-ament_cmake_python_symlink_limo_gazebosim: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_symlink_limo_gazebosim
-.PHONY : ament_cmake_python_symlink_limo_gazebosim
+ament_cmake_python_copy_limo_gazebosim: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_copy_limo_gazebosim
+.PHONY : ament_cmake_python_copy_limo_gazebosim
 
 # fast build rule for target.
-ament_cmake_python_symlink_limo_gazebosim/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_limo_gazebosim.dir/build.make CMakeFiles/ament_cmake_python_symlink_limo_gazebosim.dir/build
-.PHONY : ament_cmake_python_symlink_limo_gazebosim/fast
+ament_cmake_python_copy_limo_gazebosim/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_limo_gazebosim.dir/build.make CMakeFiles/ament_cmake_python_copy_limo_gazebosim.dir/build
+.PHONY : ament_cmake_python_copy_limo_gazebosim/fast
 
 #=============================================================================
 # Target rules for targets named ament_cmake_python_build_limo_gazebosim_egg
@@ -237,7 +237,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... ament_cmake_python_build_limo_gazebosim_egg"
-	@echo "... ament_cmake_python_symlink_limo_gazebosim"
+	@echo "... ament_cmake_python_copy_limo_gazebosim"
 	@echo "... limo_gazebosim_uninstall"
 	@echo "... uninstall"
 .PHONY : help

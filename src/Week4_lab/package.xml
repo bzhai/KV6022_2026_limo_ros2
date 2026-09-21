@@ -4,7 +4,7 @@
   <name>Week4_lab</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="famousgrouse@live.cn">ben</maintainer>
+  <maintainer email="bing.zhai@northumbria.ac.uk">ben</maintainer>
   <license>TODO: License declaration</license>
 
   <depend>rclpy</depend>

@@ -1,1 +1,6 @@
-/home/ben/KV6022_limo_ros2/src/yolo_ros/yolo_msgs/msg/KeyPoint3DArray.msg
+# represents all the keypoints for human pose estimation in meters
+
+yolo_msgs/KeyPoint3D[] data
+
+# frame reference
+string frame_id

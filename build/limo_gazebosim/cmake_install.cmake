@@ -43,7 +43,28 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/limo_gazebosim" TYPE DIRECTORY FILES
+    "/home/ben/KV6022_limo_ros2/src/limo_gazebosim/launch"
+    "/home/ben/KV6022_limo_ros2/src/limo_gazebosim/rviz"
+    "/home/ben/KV6022_limo_ros2/src/limo_gazebosim/worlds"
+    "/home/ben/KV6022_limo_ros2/src/limo_gazebosim/models"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/limo_gazebosim/environment" TYPE FILE FILES "/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_environment_hooks/pythonpath.sh")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/limo_gazebosim/environment" TYPE FILE FILES "/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_environment_hooks/pythonpath.dsv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/limo_gazebosim-0.0.0-py3.10.egg-info" TYPE DIRECTORY FILES "/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_python/limo_gazebosim/limo_gazebosim.egg-info/")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/limo_gazebosim" TYPE DIRECTORY FILES "/home/ben/KV6022_limo_ros2/src/limo_gazebosim/limo_gazebosim/" REGEX "/[^/]*\\.pyc$" EXCLUDE REGEX "/\\_\\_pycache\\_\\_$" EXCLUDE)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -52,6 +73,69 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
         "/home/ben/miniconda3/envs/ros2/bin/python3" "-m" "compileall"
         "/home/ben/KV6022_limo_ros2/install/limo_gazebosim/lib/python3.10/site-packages/limo_gazebosim"
       )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/limo_gazebosim" TYPE PROGRAM FILES "/home/ben/KV6022_limo_ros2/src/limo_gazebosim/scripts/twist_watchdog.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/limo_gazebosim")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/limo_gazebosim")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/limo_gazebosim/environment" TYPE FILE FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/limo_gazebosim/environment" TYPE FILE FILES "/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/limo_gazebosim/environment" TYPE FILE FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/limo_gazebosim/environment" TYPE FILE FILES "/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_environment_hooks/path.dsv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/limo_gazebosim" TYPE FILE FILES "/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_environment_hooks/local_setup.bash")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/limo_gazebosim" TYPE FILE FILES "/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_environment_hooks/local_setup.sh")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/limo_gazebosim" TYPE FILE FILES "/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_environment_hooks/local_setup.zsh")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/limo_gazebosim" TYPE FILE FILES "/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_environment_hooks/local_setup.dsv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/limo_gazebosim" TYPE FILE FILES "/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_environment_hooks/package.dsv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_index/share/ament_index/resource_index/packages/limo_gazebosim")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/limo_gazebosim/cmake" TYPE FILE FILES
+    "/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_core/limo_gazebosimConfig.cmake"
+    "/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_core/limo_gazebosimConfig-version.cmake"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/limo_gazebosim" TYPE FILE FILES "/home/ben/KV6022_limo_ros2/src/limo_gazebosim/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

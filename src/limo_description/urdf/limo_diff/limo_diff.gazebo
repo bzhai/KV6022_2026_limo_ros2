@@ -55,18 +55,32 @@
             <max_wheel_acceleration>1.0</max_wheel_acceleration>
             <command_topic>cmd_vel</command_topic>
             <publish_odom>true</publish_odom>
-            <publish_odom_tf>true</publish_odom_tf>
+            <publish_odom_tf>false</publish_odom_tf>
             <publish_wheel_tf>false</publish_wheel_tf>
             <odometry_topic>odom</odometry_topic>
             <odometry_frame>odom</odometry_frame>
             <robot_base_frame>base_link</robot_base_frame>
-            <odometry_source>1</odometry_source>
+            <odometry_source>0</odometry_source>
             <ros>
-                <!-- <remapping>odom:=/odometry</remapping> -->
+                <remapping>odom:=/odom/wheel</remapping>
             </ros>
         </plugin>
     </gazebo>
-
+        <gazebo>
+        <plugin name="limo_diff_drive_perfect" filename="libgazebo_ros_p3d.so">
+            <always_on>true</always_on>
+            <update_rate>30.0</update_rate>
+            <body_name>base_link</body_name>
+            <topic_name>odom/perfect</topic_name>
+            <gaussian_noise>0.01</gaussian_noise>
+            <frame_name>odom</frame_name>
+            <xyz_offset>0 0 0</xyz_offset>
+            <rpy_offset>0 0 0</rpy_offset>
+            <ros>
+                <remapping>odom:=/odom/perfect</remapping>
+            </ros>
+        </plugin>
+    </gazebo>
     
    
 

@@ -1,1 +1,4 @@
-/home/ben/KV6022_limo_ros2/src/yolo_ros/yolo_msgs/msg/Vector2.msg
+# 2D size in pixel
+
+float64 x
+float64 y

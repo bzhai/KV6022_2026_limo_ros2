@@ -1,1 +1,4 @@
-/home/ben/KV6022_limo_ros2/build/yolo_msgs/ament_cmake_environment_hooks/local_setup.dsv
+source;share/yolo_msgs/environment/ament_prefix_path.sh
+source;share/yolo_msgs/environment/library_path.sh
+source;share/yolo_msgs/environment/path.sh
+source;share/yolo_msgs/environment/pythonpath.sh

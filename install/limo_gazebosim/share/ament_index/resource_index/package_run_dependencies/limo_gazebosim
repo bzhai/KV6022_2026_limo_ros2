@@ -1,1 +1,1 @@
-/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/limo_gazebosim
+rclcpp;rclpy;gazebo_ros;gazebo_plugins;limo_description;limo_msgs;ament_lint_auto;ament_lint_common

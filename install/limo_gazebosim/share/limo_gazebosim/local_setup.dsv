@@ -1,1 +1,3 @@
-/home/ben/KV6022_limo_ros2/build/limo_gazebosim/ament_cmake_environment_hooks/local_setup.dsv
+source;share/limo_gazebosim/environment/ament_prefix_path.sh
+source;share/limo_gazebosim/environment/path.sh
+source;share/limo_gazebosim/environment/pythonpath.sh

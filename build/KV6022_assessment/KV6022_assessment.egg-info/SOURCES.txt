@@ -13,13 +13,6 @@ KV6022_assessment/example_nav_through_poses.py
 KV6022_assessment/example_nav_to_pose.py
 KV6022_assessment/example_opencv_detector.py
 KV6022_assessment/example_waypoint_follower.py
-KV6022_assessment.egg-info/PKG-INFO
-KV6022_assessment.egg-info/SOURCES.txt
-KV6022_assessment.egg-info/dependency_links.txt
-KV6022_assessment.egg-info/entry_points.txt
-KV6022_assessment.egg-info/requires.txt
-KV6022_assessment.egg-info/top_level.txt
-KV6022_assessment.egg-info/zip-safe
 launch/limo_navigation.launch.py
 maps/potholes_20mm.pgm
 maps/potholes_20mm.yaml
@@ -27,3 +20,6 @@ params/nav2_params.yaml
 resource/KV6022_assessment
 rviz/limo_navigation.rviz
 rviz/slam_toolbox_default.rviz
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

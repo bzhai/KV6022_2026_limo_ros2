@@ -1,1 +1,4 @@
-/home/ben/KV6022_limo_ros2/src/yolo_ros/yolo_msgs/msg/Pose2D.msg
+# 2D position in pixel coordinates
+
+yolo_msgs/Point2D position
+float64 theta

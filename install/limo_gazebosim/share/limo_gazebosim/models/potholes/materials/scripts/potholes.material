@@ -1,1 +1,13 @@
-/home/ben/KV6022_limo_ros2/src/limo_gazebosim/models/potholes/materials/scripts/potholes.material
+material Potholes/BackgroundPotholes 
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture background_potholes.png
+            }
+        }
+    }
+}

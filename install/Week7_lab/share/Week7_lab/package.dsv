@@ -1,0 +1,6 @@
+source;share/Week7_lab/hook/pythonpath.ps1
+source;share/Week7_lab/hook/pythonpath.dsv
+source;share/Week7_lab/hook/pythonpath.sh
+source;share/Week7_lab/hook/ament_prefix_path.ps1
+source;share/Week7_lab/hook/ament_prefix_path.dsv
+source;share/Week7_lab/hook/ament_prefix_path.sh

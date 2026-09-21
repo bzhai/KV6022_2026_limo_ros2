@@ -1,1 +1,19 @@
-/home/ben/KV6022_limo_ros2/src/limo_gazebosim/models/Apriltag36_11_00000/materials/scripts/Apriltag.material
+material Apriltag36_11_00000
+{
+  technique
+  {
+    pass
+    {
+      lighting off
+      depth_write on
+      scene_blend replace
+      texture_unit
+      {
+        texture tag36_11_00000.png
+        filtering bilinear
+      }
+    }
+  }
+}
+
+

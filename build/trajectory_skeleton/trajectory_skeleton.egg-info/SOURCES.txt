@@ -11,13 +11,9 @@ setup.py
 launch/view_robot.launch.py
 resource/trajectory_skeleton
 rviz/follow.rviz
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py
 trajectory_skeleton/__init__.py
 trajectory_skeleton/trajectory_tracking_controller.py
 trajectory_skeleton/trajectory_tracking_controller_SOLUTION.py
-trajectory_skeleton.egg-info/PKG-INFO
-trajectory_skeleton.egg-info/SOURCES.txt
-trajectory_skeleton.egg-info/dependency_links.txt
-trajectory_skeleton.egg-info/entry_points.txt
-trajectory_skeleton.egg-info/requires.txt
-trajectory_skeleton.egg-info/top_level.txt
-trajectory_skeleton.egg-info/zip-safe
