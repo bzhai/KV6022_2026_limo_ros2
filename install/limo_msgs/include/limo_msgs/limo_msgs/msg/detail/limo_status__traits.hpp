@@ -1,1 +1,0 @@
-/home/ben/KV6022_limo_ros2/build/limo_msgs/rosidl_generator_cpp/limo_msgs/msg/detail/limo_status__traits.hpp
