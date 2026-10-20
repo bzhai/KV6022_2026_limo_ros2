@@ -140,3 +140,7 @@ cython_debug/
 
 # VS Code
 .vscode/
+
+# ROS 2 workspace build artifacts (colcon output)
+/install/
+/log/
