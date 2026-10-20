@@ -50,7 +50,7 @@ which matches the advertised `angle_max`. So the full fan spans $[-114.59^\circ,
 
 Define the set of valid beam indices
 
-$$\mathcal{V} = \left\{\, i \;\middle|\; r_i \in \mathbb{R},\ \ r_{\min} \le r_i \le r_{\max} \,\right\}$$
+$$\mathcal{V} = \lbrace\, i \mid r_i \in \mathbb{R},\ \ r_{\min} \le r_i \le r_{\max} \,\rbrace$$
 
 where $r_{\min} =$ `range_min` $= 0.12$ m and $r_{\max} =$ `range_max` $= 8.0$ m for the LIMO.
 
