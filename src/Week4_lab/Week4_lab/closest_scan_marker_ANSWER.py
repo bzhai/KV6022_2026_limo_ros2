@@ -38,6 +38,9 @@ class ClosestScanMarker(Node):
         closest_range = float('inf')
         closest_index = -1
 
+        # Loop over all range readings in the laser scan.
+        # Find the valid reading (within range and not NaN/inf) that is closest to the sensor.
+        # Track both the minimum range ('closest_range') and its corresponding index ('closest_index').
         for i, r in enumerate(msg.ranges):
             if math.isnan(r) or math.isinf(r):
                 continue
@@ -47,6 +50,10 @@ class ClosestScanMarker(Node):
                 closest_range = r
                 closest_index = i
 
+        # closest_index stays at -1 if the loop never found a usable reading
+        # (every beam was NaN, inf, or outside [range_min, range_max]).
+        # Without a valid beam there is no angle to compute, so log and skip
+        # this scan rather than publishing a bogus marker at the sensor origin.
         if closest_index < 0:
             self.get_logger().warning('No valid range readings in this scan.')
             return
