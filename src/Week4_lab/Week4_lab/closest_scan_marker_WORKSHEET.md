@@ -52,7 +52,7 @@ Define the set of valid beam indices
 
 $$\mathcal{V} = \lbrace\, i \mid r_i \in \mathbb{R},\ \ r_{\min} \le r_i \le r_{\max} \,\rbrace$$
 
-where $r_{\min} =$ `range_min` $= 0.12$ m and $r_{\max} =$ `range_max` $= 8.0$ m for the LIMO.
+where $r_{\min}$ is the message's `range_min` field ($0.12$ m) and $r_{\max}$ is `range_max` ($8.0$ m) for the LIMO.
 
 Three kinds of entry fail this test:
 
@@ -66,7 +66,7 @@ The $r_{\min}$ bound is also the answer to the earlier workshop question about c
 
 ### 2.3 The nearest obstacle
 
-$$i^{\star} = \operatorname*{arg\,min}_{i \in \mathcal{V}} r_i, \qquad r^{\star} = r_{i^{\star}}, \qquad \theta^{\star} = \theta_{\min} + i^{\star}\,\Delta\theta$$
+$$i^{\star} = \arg\min_{i \in \mathcal{V}} r_i, \qquad r^{\star} = r_{i^{\star}}, \qquad \theta^{\star} = \theta_{\min} + i^{\star}\,\Delta\theta$$
 
 You are implementing $\arg\min$ by hand as a single pass over the array, keeping a running best. The invariant to hold at the top of each iteration is:
 
@@ -96,7 +96,7 @@ $$\begin{bmatrix} \mathbf{p}^{O} \\ 1 \end{bmatrix} = \underbrace{\begin{bmatrix
 
 `do_transform_point` performs exactly this line. The rotation is delivered as a quaternion $\mathbf{q} = (q_x, q_y, q_z, q_w)$ rather than a matrix, but the operation is the same.
 
-Note the index convention: $T^{O}_{L}$ maps *from* $L$ *to* $O$, and matches the call `lookup_transform(target='odom', source='laser_link', ...)`. Swapping those two arguments gives you $T^{L}_{O} = (T^{O}_{L})^{-1}$ and a marker that flies off in the wrong direction as you drive — a good deliberate experiment once your code works.
+Note the index convention: in $T^{O}_{L}$ the target frame sits in the superscript and the source frame in the subscript, so the transform maps from $L$ to $O$. That matches the call `lookup_transform(target='odom', source='laser_link', ...)`. Swap the two arguments and you get $T^{L}_{O}$, the inverse transform, along with a marker that flies off in the wrong direction as you drive — a good deliberate experiment once your code works.
 
 ---
 
@@ -191,7 +191,7 @@ Use hint 1 first. Only move to hint 2 if you are still stuck after trying someth
 ### Blank 7 — the bearing
 1. Write out $\theta_0$, then $\theta_1$, then $\theta_2$. What is the pattern?
 2. It is an arithmetic sequence: a starting angle plus a whole number of steps.
-3. Equation in section 2.1, with $i = $ `closest_index`. Both quantities are fields of `msg`.
+3. Equation in section 2.1, with $i$ set to `closest_index`. Both quantities are fields of `msg`.
 
 ### Blanks 8a / 8b — Cartesian
 1. This is the standard polar-to-Cartesian conversion. Which function gives the component along the axis the angle is measured *from*?
