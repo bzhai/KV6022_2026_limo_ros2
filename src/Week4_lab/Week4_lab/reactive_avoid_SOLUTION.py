@@ -87,33 +87,67 @@ class ReactiveAvoid(Node):
     #  Carried over from task 3 - no blanks
     # =========================================================================
     def sector_bounds(self, msg: LaserScan, a_lo, a_hi):
-        """Inclusive index range of beams with bearing in [a_lo, a_hi]."""
+        """Inclusive index range of beams with bearing in [a_lo, a_hi].
+        # [sector_bounds] bridges the gap between reasoning about directions in angles
+        # and accessing the actual array indices in laser data. Its purpose in obstacle
+        # avoidance: given a sector defined by two bearings, it returns which beams
+        # are within that sector, allowing you to examine only the relevant beams.
+        #
+        # Why this matters for avoidance:
+        #
+        # The robot doesn't need all 360 beams equally. It needs answers like:
+        #   - Is there something close straight ahead?
+        #   - Is it closer on my left or my right?
+        #
+        # Each of these is a "sector"—a wedge of the scan defined by two angles
+        # (e.g., the front sector is -30° to +30°).
+
+        """
+        # How many beams are in this scan? They are numbered 0 ... n-1.
         n = len(msg.ranges)
 
         def to_index(angle):
+            # Turn a bearing (an angle) into the number of the beam that points
+            # at it. Beams are evenly spaced, so this is the same arithmetic
+            # sequence as the bearing formula, but rearranged to solve for i.
             i = int(round((angle - msg.angle_min) / msg.angle_increment))
+            # Rounding can land just outside the real list of beams, so clamp
+            # the result into [0, n-1] to guarantee a valid index.
             return max(0, min(n - 1, i))
 
+        # A sector is the block of beams between its two edge bearings,
+        # including both edges.
         return to_index(a_lo), to_index(a_hi)
 
     def min_in_sector(self, msg: LaserScan, a_lo, a_hi):
         """Smallest trustworthy range in the sector, or None if no usable beam."""
+        # Convert the sector's two edge bearings into beam numbers.
         i_lo, i_hi = self.sector_bounds(msg, a_lo, a_hi)
+        # Start with "no beam seen yet": infinity, because any real distance is
+        # smaller than infinity and will replace it.
         best = float('inf')
 
+        # Look at every beam in the sector, including the last one.
         for i in range(i_lo, i_hi + 1):
+            # The distance that this particular beam measured.
             r = msg.ranges[i]
 
+            # Not a number (no echo): this beam tells us nothing, so skip it.
             if math.isnan(r):
                 continue
+            # Nothing found within range, or a reading past the sensor's trusted
+            # maximum: treat both as "an obstacle at the far edge".
             if math.isinf(r) or r > msg.range_max:
                 r = msg.range_max
+            # Closer than the sensor can measure: unreliable, so skip it.
             elif r < msg.range_min:
                 continue
 
+            # Is this the closest thing found so far? If so, remember it.
             if r < best:
                 best = r
 
+        # If no real beam was ever found, best is still infinity -> report None.
         return None if math.isinf(best) else best
 
     # =========================================================================
@@ -214,16 +248,21 @@ class ReactiveAvoid(Node):
     #  Glue
     # =========================================================================
     def on_scan(self, msg: LaserScan):
+        # Every incoming scan, the robot makes one decision: how fast forward
+        # (v) and how fast to turn (w). Everything below builds those two.
 
+        # Split the scan into three wedges of beams: right, front, left.
         right, front, left = self.sector_windows()
 
+        # For each wedge, find the distance to the nearest trustworthy obstacle.
         d_r = self.min_in_sector(msg, *right)
         d_f = self.min_in_sector(msg, *front)
         d_l = self.min_in_sector(msg, *left)
 
         # Blind where it matters most: hold still.
+        # If we cannot see straight ahead at all, the safest action is to stop.
         if d_f is None:
-            self.publish(0.0, 0.0)
+            self.publish(0.0, 0.0)            # no forward speed, no turning
             self.get_logger().warning(
                 'No usable readings in the front sector - holding still.',
                 throttle_duration_sec=2.0)
@@ -231,6 +270,8 @@ class ReactiveAvoid(Node):
 
         # A missing side reading is treated as "that side is shut", the
         # pessimistic assumption.
+        # If a side has no usable beam, pretend an obstacle is right next to us
+        # there (distance 0), so the robot never turns blindly into that side.
         if d_l is None:
             d_l = 0.0
         if d_r is None:
@@ -238,7 +279,10 @@ class ReactiveAvoid(Node):
 
         # ORDER MATTERS: test with the CURRENT value of self.avoiding, then
         # update it below.
+        # Is the front obstacle closer than our safe stopping distance?
         blocked = self.front_is_blocked(d_f)
+        # Is it ALSO too close on both sides? Then there is no way forward at
+        # all, only turning around.
         dead_end = blocked and self.both_sides_shut(d_l, d_r)
 
         # ---- BLANKS 9 and 10 ------------------------------------------------
@@ -248,25 +292,34 @@ class ReactiveAvoid(Node):
                 # scan is what makes the robot wobble head-on into a wall:
                 # turning left changes what the left sector sees, which flips
                 # the decision to right, which flips it back.
-                self.avoiding = True
+                self.avoiding = True                          # remember we are now mid-turn
                 self.turn_sign = self.choose_turn_sign(d_l, d_r)          # <-- BLANK 9a
 
             if dead_end:
                 # Sides are near-equal here, so the proportional rate would be
                 # far too slow. Rotate at full rate.
+                # No way forward: spin in the chosen direction at full speed.
                 w = self.turn_sign * self.w_max
             else:
+                # One side is more open: turn away from the closer obstacle,
+                # with a rate that grows as the gap shrinks.
                 w = self.angular_for(self.turn_sign, d_l, d_r)            # <-- BLANK 9b
         else:
+            # Front is clear, so cancel any avoidance in progress and go
+            # straight ahead.
             self.avoiding = False
             self.turn_sign = 0.0                                          # <-- BLANK 9c
             w = 0.0                                                       # <-- BLANK 9d
         # ---------------------------------------------------------------------
 
+        # Choose the forward speed: cruise when clear, slow to creep when
+        # blocked, and stop when in a dead end.
         v = self.linear_for(blocked, dead_end, d_f)
 
+        # Send the chosen forward/turn speeds to the robot's motors.
         self.publish(v, w)
 
+        # Human-readable status line so the behaviour can be traced in logs.
         state = 'DEAD-END' if dead_end else ('AVOID' if blocked else 'CRUISE')
         self.get_logger().info(
             f'R {d_r:.2f} | F {d_f:.2f} | L {d_l:.2f} m  ->  '
