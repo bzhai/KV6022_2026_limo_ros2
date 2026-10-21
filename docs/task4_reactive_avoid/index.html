@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reactive obstacle avoidance: teaching visuals</title>
+<style>
+:root{--text-primary:#1f1f1d;--text-secondary:#5F5E5A;--surface-1:#F1EFE8;--bg:#ffffff;--border:rgba(0,0,0,.15);--ok:#0F6E56;--warn:#854F0B;--bad:#A32D2D;--accent:#185FA5}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--text-primary:#eeede8;--text-secondary:#b4b2a9;--surface-1:#2a2a28;--bg:#191918;--border:rgba(255,255,255,.18);--ok:#5DCAA5;--warn:#EF9F27;--bad:#F09595;--accent:#85B7EB}}
+body{margin:0;background:var(--bg);color:var(--text-primary);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:760px;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+h1{font-size:1.9rem;font-weight:600;margin:0 0 .4rem;line-height:1.2}
+h2{font-size:1.25rem;font-weight:600;margin:2.8rem 0 .5rem}
+p{color:var(--text-secondary);max-width:70ch}
+figure{margin:1rem 0;background:#fff;border:1px solid var(--border);border-radius:10px;padding:8px}
+figure img{display:block;width:100%;height:auto}
+button{font:inherit;font-size:14px;padding:6px 12px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text-primary);cursor:pointer}
+button:hover{background:var(--surface-1)}button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.r{display:flex;align-items:center;gap:12px;margin:6px 0}.r label{font-size:14px;color:var(--text-secondary);min-width:90px}
+.o{font-size:14px;font-weight:600;min-width:60px;text-align:right;font-variant-numeric:tabular-nums}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:10px;margin:14px 0 10px}
+.cd{background:var(--surface-1);border-radius:8px;padding:10px 12px}.lb{font-size:13px;color:var(--text-secondary)}
+.vl{font-size:20px;font-weight:600;font-variant-numeric:tabular-nums}.pr{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+#sim{width:100%;height:auto;display:block}#log{font:12px ui-monospace,monospace;color:var(--text-secondary);overflow-x:auto;white-space:pre}
+</style></head><body><main><p><a href="../index.html">All workshop tasks</a></p>
+<h1>Reactive obstacle avoidance</h1>
+<p>Teaching visuals for workshop task 4 (<code>reactive_avoid_SOLUTION.py</code>). All values use the default node parameters.</p>
+
+<h2>Sector geometry and distance thresholds</h2>
+<p>The scan is split into three wedges. d_s, d_s+δ and d_c apply to the front; d_side applies to the two sides.</p>
+<figure><img src="sector_geometry.svg" alt="Robot seen from above with front, left and right sectors and the threshold arcs"></figure>
+
+<h2>Speed law and hysteresis</h2>
+<p>Below the blocked limit the robot creeps at 0.05 m/s; above it, speed ramps from 0 at 0.35 m to 0.22 m/s at 0.70 m. The limit is 0.35 m while cruising and 0.43 m while avoiding.</p>
+<figure><img src="speed_law.svg" alt="Forward speed versus front distance for approaching and leaving branches"></figure>
+
+<h2>Decision flow of on_scan</h2>
+<figure><img src="on_scan_flowchart.svg" alt="Flowchart of the on_scan callback"></figure>
+
+<h2>Simulator</h2>
+<p>Each slider movement counts as one new scan, so the latch and hysteresis persist between moves. Try "Wall ahead", then drag the front slider slowly from 0.30 to 0.45. The blue line is the predicted path over the next 2 seconds.</p>
+<svg viewBox="0 0 680 300" id="sim" role="img" aria-label="Robot with sector obstacles and predicted path">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#2a78d6" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+<g id="wedges"></g><g id="thr"></g><g id="obs"></g><g id="pth"></g>
+<rect x="328" y="261" width="24" height="30" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<polygon points="333,272 347,272 340,264" fill="#5F5E5A"/></svg>
+<div class="pr">
+<button onclick="preset(1.2,1.4,1.1)">Open space</button><button onclick="preset(1.0,0.55,1.0)">Approaching</button>
+<button onclick="preset(0.9,0.30,0.40)">Wall ahead</button><button onclick="preset(0.6,0.30,0.6)">Symmetric corridor</button>
+<button onclick="preset(0.35,0.30,0.38)">Dead end</button><button onclick="resetAll()">Reset latch</button></div>
+<div class="r"><label for="dl">Left d_l</label><input type="range" id="dl" min="0" max="1.5" step="0.01" value="1.2" style="flex:1"><span class="o" id="dlo"></span></div>
+<div class="r"><label for="df">Front d_f</label><input type="range" id="df" min="0.05" max="1.5" step="0.01" value="1.4" style="flex:1"><span class="o" id="dfo"></span></div>
+<div class="r"><label for="dr">Right d_r</label><input type="range" id="dr" min="0" max="1.5" step="0.01" value="1.1" style="flex:1"><span class="o" id="dro"></span></div>
+<label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-secondary);margin:8px 0"><input type="checkbox" id="fix"> Use the latched sign for ω in AVOID (suggested fix)</label>
+<div class="st">
+<div class="cd"><div class="lb">State</div><div class="vl" id="sS">CRUISE</div></div>
+<div class="cd"><div class="lb">v (m/s)</div><div class="vl" id="sV">0</div></div>
+<div class="cd"><div class="lb">ω (rad/s)</div><div class="vl" id="sW">0</div></div>
+<div class="cd"><div class="lb">Turn sign</div><div class="vl" id="sG">0</div></div>
+<div class="cd"><div class="lb">Front limit</div><div class="vl" id="sL">0.35</div></div>
+<div class="cd"><div class="lb">Asymmetry A</div><div class="vl" id="sA">0</div></div></div>
+<div id="log"></div>
+</main>
+<script>
+const S=160,cx=340,cy=276,DS=.35,DC=.70,DSD=.45,DEL=.08,VM=.22,WM=.9,VC=.05,AF=25*Math.PI/180,AS=75*Math.PI/180;
+let avoiding=false,sign=0;
+const P=(r,b)=>[cx-r*S*Math.sin(b),cy-r*S*Math.cos(b)],f=n=>n.toFixed(1);
+const arc=(r,b1,b2)=>{const a=P(r,b1),c=P(r,b2);return `M${f(a[0])} ${f(a[1])} A${f(r*S)} ${f(r*S)} 0 0 0 ${f(c[0])} ${f(c[1])}`};
+const wedge=(r,b1,b2)=>{const a=P(r,b1),c=P(r,b2);return `M${cx} ${cy} L${f(a[0])} ${f(a[1])} A${f(r*S)} ${f(r*S)} 0 0 0 ${f(c[0])} ${f(c[1])} Z`};
+const $=id=>document.getElementById(id);
+$('wedges').innerHTML=`<path d="${wedge(1.55,-AF,AF)}" fill="#1D9E75" fill-opacity="0.12" stroke="#1D9E75" stroke-width="0.5"/><path d="${wedge(1.55,AF,AS)}" fill="#7F77DD" fill-opacity="0.12" stroke="#7F77DD" stroke-width="0.5"/><path d="${wedge(1.55,-AS,-AF)}" fill="#7F77DD" fill-opacity="0.12" stroke="#7F77DD" stroke-width="0.5"/>`;
+function choose(dl,dr){if(dl>dr)return 1;if(dr>dl)return -1;return sign!==0?sign:1}
+function angular(sg,dl,dr,fx){const t=dl+dr;let w;if(t<1e-6)w=sg*WM;else if(fx){const m=WM*Math.abs(dl-dr)/t;w=m<1e-3?sg*WM:sg*m}else{w=WM*(dl-dr)/t;if(Math.abs(w)<1e-3)w=sg*WM}return Math.max(-WM,Math.min(WM,w))}
+function linear(bl,de,df){if(de)return 0;if(bl)return VC;return Math.max(0,Math.min(VM,VM*(df-DS)/(DC-DS)))}
+function scan(){
+const dl=+$('dl').value,df=+$('df').value,dr=+$('dr').value,fx=$('fix').checked;
+$('dlo').textContent=dl.toFixed(2)+' m';$('dfo').textContent=df.toFixed(2)+' m';$('dro').textContent=dr.toFixed(2)+' m';
+const lim=avoiding?DS+DEL:DS,bl=df<lim,de=bl&&dl<DSD&&dr<DSD;let w;
+if(bl){if(!avoiding){avoiding=true;sign=choose(dl,dr)}w=de?sign*WM:angular(sign,dl,dr,fx)}else{avoiding=false;sign=0;w=0}
+const v=linear(bl,de,df),st=de?'DEAD-END':(bl?'AVOID':'CRUISE'),A=(dl+dr)>1e-6?(dl-dr)/(dl+dr):0;
+$('sS').textContent=st;$('sS').style.color=st==='CRUISE'?'var(--ok)':(st==='AVOID'?'var(--warn)':'var(--bad)');
+$('sV').textContent=v.toFixed(3);$('sW').textContent=(w>=0?'+':'')+w.toFixed(3);$('sG').textContent=sign>0?'+1 left':(sign<0?'−1 right':'0');
+const tl=avoiding?DS+DEL:DS;$('sL').textContent=tl.toFixed(2);$('sA').textContent=(A>=0?'+':'')+A.toFixed(2);
+$('log').textContent=`R ${dr.toFixed(2)} | F ${df.toFixed(2)} | L ${dl.toFixed(2)} m  ->  ${st.padEnd(8)} v=${v>=0?'+':''}${v.toFixed(3)} w=${w>=0?'+':''}${w.toFixed(3)}`;
+$('thr').innerHTML=`<path d="${arc(DC,-AF,AF)}" fill="none" stroke="#BA7517" stroke-dasharray="3 3"/><path d="${arc(DS,-AF,AF)}" fill="none" stroke="#E24B4A" stroke-width="${avoiding?.8:1.5}"/><path d="${arc(DS+DEL,-AF,AF)}" fill="none" stroke="#A32D2D" stroke-width="${avoiding?1.5:.8}" stroke-dasharray="4 3"/><path d="${arc(DSD,AF,AS)}" fill="none" stroke="#7F77DD" stroke-dasharray="5 3"/><path d="${arc(DSD,-AS,-AF)}" fill="none" stroke="#7F77DD" stroke-dasharray="5 3"/>`;
+const c=x=>Math.min(1.5,Math.max(.02,x)),ob=(d,b1,b2,bad)=>`<path d="${arc(c(d),b1,b2)}" fill="none" stroke="${bad?'#E24B4A':'#888780'}" stroke-width="5" stroke-linecap="round"/>`;
+$('obs').innerHTML=ob(df,-AF+.03,AF-.03,df<tl)+ob(dl,AF+.03,AS-.03,dl<DSD)+ob(dr,-AS+.03,-AF-.03,dr<DSD);
+let X=0,Y=0,ph=0,pts=[];for(let i=0;i<=40;i++){pts.push(`${f(cx-S*Y)},${f(cy-S*X)}`);X+=v*Math.cos(ph)*.05;Y+=v*Math.sin(ph)*.05;ph+=w*.05}
+let h='';if(v>1e-6)h=`<polyline points="${pts.join(' ')}" fill="none" stroke="#2a78d6" stroke-width="2" stroke-linecap="round" marker-end="url(#ar)"/>`;
+else if(Math.abs(w)>0){const r=28,a2=w>0?2.1:-2.1;h=`<path d="M${cx} ${cy-r} A${r} ${r} 0 0 ${w>0?0:1} ${f(cx-r*Math.sin(a2))} ${f(cy-r*Math.cos(a2))}" fill="none" stroke="#2a78d6" stroke-width="2" marker-end="url(#ar)"/>`}
+$('pth').innerHTML=h}
+function preset(l,fr,r){$('dl').value=l;$('df').value=fr;$('dr').value=r;scan()}
+function resetAll(){avoiding=false;sign=0;preset(1.2,1.4,1.1)}
+['dl','df','dr'].forEach(id=>$(id).addEventListener('input',scan));$('fix').addEventListener('change',scan);scan();
+</script></body></html>

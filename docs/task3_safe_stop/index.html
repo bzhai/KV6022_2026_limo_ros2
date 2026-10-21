@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Task 3 safe stop: teaching visuals</title>
+<style>
+:root{--text-primary:#1f1f1d;--text-secondary:#5F5E5A;--surface-1:#F1EFE8;--bg:#fff;--border:rgba(0,0,0,.15);--ok:#0F6E56;--warn:#854F0B;--bad:#A32D2D;--accent:#185FA5;--grid:#e1e0d9}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--text-primary:#eeede8;--text-secondary:#b4b2a9;--surface-1:#2a2a28;--bg:#191918;--border:rgba(255,255,255,.18);--ok:#5DCAA5;--warn:#EF9F27;--bad:#F09595;--accent:#85B7EB;--grid:#3a3a37}}
+body{margin:0;background:var(--bg);color:var(--text-primary);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:760px;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+h1{font-size:1.9rem;font-weight:600;margin:0 0 .4rem;line-height:1.2}h2{font-size:1.25rem;font-weight:600;margin:2.8rem 0 .5rem}
+p{color:var(--text-secondary);max-width:70ch}a{color:var(--accent)}
+figure{margin:1rem 0;background:#fff;border:1px solid var(--border);border-radius:10px;padding:8px}figure img{display:block;width:100%;height:auto}
+button{font:inherit;font-size:14px;padding:6px 12px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text-primary);cursor:pointer}
+button:hover{background:var(--surface-1)}button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.r{display:flex;align-items:center;gap:12px;margin:6px 0}.r label{font-size:14px;color:var(--text-secondary);min-width:120px}
+.o{font-size:14px;font-weight:600;min-width:64px;text-align:right;font-variant-numeric:tabular-nums}
+.ck{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-secondary);margin:6px 0}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:14px 0 10px}
+.cd{background:var(--surface-1);border-radius:8px;padding:10px 12px}.lb{font-size:13px;color:var(--text-secondary)}
+.vl{font-size:20px;font-weight:600;font-variant-numeric:tabular-nums}.pr{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+svg.live{width:100%;height:auto;display:block}#log{font:12px ui-monospace,monospace;color:var(--text-secondary);overflow-x:auto;white-space:pre}
+svg.live text{font:12px system-ui,sans-serif;fill:var(--text-secondary)}
+</style></head><body><main>
+<p><a href="../index.html">All workshop tasks</a></p>
+<h1>Safe stop</h1>
+<p>Teaching visuals for workshop task 3 (<code>safe_stop_SOLUTION.py</code>). All values use the default node parameters.</p>
+
+<h2>Front sector and stop zones</h2>
+<p>One wedge, three bands. The robot cruises when far, ramps down in the middle band, and stops when close.</p>
+<figure><img src="sector_zones.svg" alt="Robot seen from above with the front sector split into close, middle and far zones"></figure>
+
+<h2>Speed law and hysteresis</h2>
+<p>The ramp is a straight line through (0.30 m, 0) and (0.60 m, 0.22 m/s). Once latched, the robot stays stopped until the obstacle is beyond 0.35 m, then jumps back onto the ramp at about 0.037 m/s.</p>
+<figure><img src="speed_law.svg" alt="Forward speed against front distance, showing the stop latch"></figure>
+
+<h2>Decision flow of on_scan</h2>
+<figure><img src="on_scan_flowchart.svg" alt="Flowchart of the safe stop callback"></figure>
+
+<h2>Simulator</h2>
+<p>Each slider movement counts as one scan, so the latch persists between moves. Drag the distance below 0.30, then slowly back up and watch where it releases.</p>
+<svg class="live" viewBox="0 0 680 280" id="sim" role="img" aria-label="Front sector with an obstacle at the chosen distance">
+<g id="zones"></g><g id="obs"></g>
+<rect x="328" y="241" width="24" height="30" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width=".5"/><polygon points="333,252 347,252 340,244" fill="#5F5E5A"/>
+<rect id="vbar" x="560" y="60" width="24" height="0" fill="#2a78d6"/><rect x="560" y="60" width="24" height="180" fill="none" stroke="#888780" stroke-width=".5"/>
+<text x="572" y="256" text-anchor="middle">v</text></svg>
+<div class="r"><label for="d">Front distance d</label><input type="range" id="d" min="0.05" max="1" step="0.005" value="0.8" style="flex:1"><span class="o" id="dO"></span></div>
+<label class="ck"><input type="checkbox" id="hy" checked> Hysteresis (blank 10)</label>
+<label class="ck"><input type="checkbox" id="nd"> No usable front data (all beams NaN)</label>
+<div class="pr"><button onclick="setD(0.8)">Clear road</button><button onclick="setD(0.45)">Slowing</button><button onclick="setD(0.29)">Too close</button><button onclick="setD(0.33)">Inside deadband</button><button onclick="stopped=false;setD(0.8)">Reset latch</button></div>
+<div class="st"><div class="cd"><div class="lb">Zone</div><div class="vl" id="sZ"></div></div>
+<div class="cd"><div class="lb">Latched</div><div class="vl" id="sL"></div></div>
+<div class="cd"><div class="lb">Zone speed</div><div class="vl" id="sZV"></div></div>
+<div class="cd"><div class="lb">Published v (m/s)</div><div class="vl" id="sV"></div></div></div>
+<div id="log"></div>
+
+<h2>Why hysteresis: a noisy approach</h2>
+<p>The robot drives up to a wall, sits right at the stop distance for three seconds, then the wall moves away. Each scan adds random sensor noise. Compare the published speed with and without the latch, and count how often the robot restarts.</p>
+<div class="r"><label for="nz">Noise ± (m)</label><input type="range" id="nz" min="0" max="0.03" step="0.001" value="0.01" style="flex:1"><span class="o" id="nzO"></span></div>
+<div class="r"><label for="mg">resume_margin δ (m)</label><input type="range" id="mg" min="0" max="0.1" step="0.005" value="0.05" style="flex:1"><span class="o" id="mgO"></span></div>
+<div class="pr"><button onclick="seed++;noise()">New noise sample</button></div>
+<svg class="live" viewBox="0 0 680 300" id="nsv" role="img" aria-label="Measured distance and published speed over 12 seconds, with and without hysteresis"></svg>
+<div class="st"><div class="cd"><div class="lb">Restarts with latch</div><div class="vl" id="rH"></div></div>
+<div class="cd"><div class="lb">Restarts without</div><div class="vl" id="rN"></div></div></div>
+</main>
+<script>
+const DS=.30,DC=.60,VM=.22,HA=Math.PI/6,cx=340,cy=256,S=200;let stopped=false,seed=1;const $=i=>document.getElementById(i);
+const P=(r,b)=>[cx-r*S*Math.sin(b),cy-r*S*Math.cos(b)],F=n=>n.toFixed(1);
+const arc=r=>{const a=P(r,-HA),c=P(r,HA);return `M${F(a[0])} ${F(a[1])} A${F(r*S)} ${F(r*S)} 0 0 0 ${F(c[0])} ${F(c[1])}`};
+const sec=r=>{const a=P(r,-HA),c=P(r,HA);return `M${cx} ${cy} L${F(a[0])} ${F(a[1])} A${F(r*S)} ${F(r*S)} 0 0 0 ${F(c[0])} ${F(c[1])} Z`};
+const classify=d=>d<DS?'CLOSE':(d<DC?'MIDDLE':'FAR');
+const speedFor=(z,d)=>z==='CLOSE'?0:(z==='MIDDLE'?VM*(d-DS)/(DC-DS):VM);
+function scanStep(d,st,hy,m){const z=classify(d);let v=speedFor(z,d);if(hy){if(st){if(d>DS+m)st=false}else if(d<DS)st=true;if(st)v=0}else st=false;return{z,v,st}}
+function draw(){
+const d=+$('d').value,hy=$('hy').checked,nd=$('nd').checked;$('dO').textContent=nd?'NaN':d.toFixed(3)+' m';
+$('zones').innerHTML=`<path d="${sec(1.08)}" fill="#1D9E75" fill-opacity=".12"/><path d="${sec(DC)}" fill="#EF9F27" fill-opacity=".22"/><path d="${sec(DS)}" fill="#E24B4A" fill-opacity=".28"/><path d="${arc(DS+.05)}" fill="none" stroke="#A32D2D" stroke-dasharray="4 3" stroke-width="${stopped&&hy?1.6:.8}"/>`;
+let v,z,line;
+if(nd){v=0;z='—';$('obs').innerHTML='';line='[WARN] No usable readings in the front sector - holding still.'}
+else{const r=scanStep(d,stopped,hy,.05);stopped=r.st;v=r.v;z=r.z;
+$('obs').innerHTML=`<path d="${arc(Math.min(d,1.05))}" fill="none" stroke="${d<DS?'#E24B4A':'#888780'}" stroke-width="5" stroke-linecap="round"/>`;
+line=`front ${d.toFixed(3)} m | ${z.padEnd(6)} | ${stopped?'LATCHED':'       '} | v = ${v.toFixed(3)} m/s`}
+$('sZ').textContent=z;$('sZ').style.color=z==='FAR'?'var(--ok)':(z==='MIDDLE'?'var(--warn)':'var(--bad)');
+$('sL').textContent=stopped?'yes':'no';$('sZV').textContent=nd?'—':speedFor(z,d).toFixed(3);$('sV').textContent=v.toFixed(3);
+const h=180*v/VM;$('vbar').setAttribute('y',240-h);$('vbar').setAttribute('height',h);$('log').textContent=line}
+function setD(x){$('d').value=x;draw()}
+['d','hy','nd'].forEach(i=>$(i).addEventListener('input',draw));draw();
+function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function noise(){
+const A=+$('nz').value,m=+$('mg').value;$('nzO').textContent=A.toFixed(3);$('mgO').textContent=m.toFixed(3);
+const R=rng(seed),N=120,ds=[],vh=[],vn=[];let st=false;
+for(let k=0;k<N;k++){const t=k/10;let dt=t<5?.5-.04*t:(t<8?.30:.30+.025*(t-8));const d=dt+A*(2*R()-1);ds.push(d);
+const a=scanStep(d,st,true,m);st=a.st;vh.push(a.v);vn.push(scanStep(d,false,false,m).v)}
+const X=k=>60+k/(N-1)*600,Yd=d=>130-(d-.2)/.35*110,Yv=v=>280-v/.15*110;
+const pl=(arr,Y)=>arr.map((y,k)=>`${F(X(k))},${F(Y(y))}`).join(' ');
+const cnt=a=>a.reduce((c,v,k)=>c+(k>0&&a[k-1]===0&&v>0?1:0),0);
+let s=`<line x1="60" x2="660" y1="${F(Yd(DS))}" y2="${F(Yd(DS))}" stroke="#E24B4A" stroke-dasharray="3 3"/><line x1="60" x2="660" y1="${F(Yd(DS+m))}" y2="${F(Yd(DS+m))}" stroke="#A32D2D" stroke-dasharray="1 3"/>`;
+s+=`<polyline points="${pl(ds,Yd)}" fill="none" stroke="#888780" stroke-width="1.5"/><text x="8" y="24">d (m)</text><text x="8" y="${F(Yd(DS)+4)}">0.30</text>`;
+s+=`<line x1="60" x2="660" y1="280" y2="280" stroke="var(--grid)"/><text x="8" y="174">v (m/s)</text>`;
+s+=`<polyline points="${pl(vn,Yv)}" fill="none" stroke="#eb6834" stroke-width="1.5" stroke-dasharray="5 3"/><polyline points="${pl(vh,Yv)}" fill="none" stroke="#2a78d6" stroke-width="2"/>`;
+s+=`<line x1="300" x2="318" y1="20" y2="20" stroke="#2a78d6" stroke-width="2"/><text x="324" y="24">v with latch</text><line x1="430" x2="448" y1="20" y2="20" stroke="#eb6834" stroke-width="2" stroke-dasharray="5 3"/><text x="454" y="24">v without latch</text>`;
+for(let t=0;t<=12;t+=2)s+=`<text x="${F(X(t*10)-4)}" y="298">${t}s</text>`;
+$('nsv').innerHTML=s;$('rH').textContent=cnt(vh);$('rN').textContent=cnt(vn)}
+['nz','mg'].forEach(i=>$(i).addEventListener('input',noise));noise();
+</script></body></html>
