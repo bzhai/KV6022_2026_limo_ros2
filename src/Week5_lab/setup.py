@@ -14,7 +14,7 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='ben',
-    maintainer_email='famousgrouse@live.cn',
+    maintainer_email='bing.zhai@northumbria.ac.uk',
     description='TODO: Package description',
     license='TODO: License declaration',
     extras_require={
