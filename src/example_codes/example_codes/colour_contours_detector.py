@@ -42,15 +42,14 @@ class ColourContoursDetector(Node):
         # So, we first change the colour space here...
         hsv_img = cv2.cvtColor(bgr_image, cv2.COLOR_BGR2HSV)
 
-        # ... and now let's create a binary (mask) image, looking for 
-        # any hue (range: 0-255), but for something brightly
-        # colours (high saturation: > 150)
-        # provide the right range values for each BGR channel (set to red bright objects)
-        # Create mask for range of colours (HSV low values, HSV high values)
+        # ... and now let's create a binary (mask) image, looking for
+        # a range of hues plus reasonable saturation and brightness.
+        # In OpenCV H is 0-179, S and V are 0-255.
+        # Green spans roughly H=35-85 (H=60 is pure green).
         # Onine colour picker - https://redketchup.io/color-picker
         hsv_thresh = cv2.inRange(hsv_img,
-                                 np.array((155, 25, 0)),
-                                 np.array((179, 255, 255)))
+                                 np.array((35, 40, 40)),
+                                 np.array((85, 255, 255)))
 
         # This is how we could find actual contours in
         # the BGR image, but we won't do this now.
