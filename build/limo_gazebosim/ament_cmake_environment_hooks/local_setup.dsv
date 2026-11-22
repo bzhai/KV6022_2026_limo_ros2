@@ -1,3 +1,0 @@
-source;share/limo_gazebosim/environment/ament_prefix_path.sh
-source;share/limo_gazebosim/environment/path.sh
-source;share/limo_gazebosim/environment/pythonpath.sh

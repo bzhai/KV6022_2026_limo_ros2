@@ -1,3 +1,0 @@
-[console_scripts]
-trajectory_publisher = trajectory_referee.trajectory_publisher:main
-

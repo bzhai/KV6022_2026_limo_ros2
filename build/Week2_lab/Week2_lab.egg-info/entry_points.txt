@@ -1,3 +1,0 @@
-[console_scripts]
-command_publisher = Week2_lab.command_publisher:main
-

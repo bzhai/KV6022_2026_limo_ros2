@@ -1,6 +1,11 @@
 # Backups of upstream .git directories for vendored packages (not tracked)
 .vendor-upstream-git/
 
+# colcon build artifacts (regenerate with `colcon build`)
+build/
+install/
+log/
+
 # Python virtual environments
 .venv/
 venv/

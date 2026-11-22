@@ -1,6 +1,0 @@
-{
-  "package_name": "limo_msgs",
-  "non_idl_tuples": [
-    "/home/ben/KV6022_limo_ros2/src/limo_msgs:msg/LimoStatus.msg"
-  ]
-}
